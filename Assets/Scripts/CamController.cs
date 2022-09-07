@@ -21,11 +21,12 @@ public class CamController : MonoBehaviour
     }
 
     [SerializeField]Transform camPosition;
-    [SerializeField]Transform playerRotation;
+    Transform playerRotation;
     float yRotation;
     // Start is called before the first frame update
     void Start()
     {
+        
         playerRotation = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
