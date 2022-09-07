@@ -6,9 +6,8 @@ using UnityEngine;
 public class CharactController : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] Transform cam;
-
     [SerializeField]int speed;
+    [SerializeField] int interactionDistance;
 
     float xInput,yInput;
     float xRotation;
@@ -28,9 +27,20 @@ public class CharactController : MonoBehaviour
     void Update()
     {
         GetInput();
+        CheckInteraction();
         transform.rotation = Quaternion.Euler(new Vector3(0, xRotation));
-        
-        if (Input.GetKeyDown(KeyCode.F)) Debug.Log(xRotation);
+    }
+    void CheckInteraction()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, LayerMask.GetMask("Interactable"));
+            if (hit.transform != null)
+            {
+                InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
+                FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
+            }
+        }
     }
     void GetInput()
     {
@@ -38,7 +48,5 @@ public class CharactController : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
 
         xRotation += Input.GetAxisRaw("Mouse X");
-
-
     }
 }

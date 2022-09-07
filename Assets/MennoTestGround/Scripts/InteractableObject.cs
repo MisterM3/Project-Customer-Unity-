@@ -2,38 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour, IInteract
 {
-
     public event EventHandler onObjectSelect;
     public event EventHandler onObjectDeSelect;
+    [SerializeField, TextArea] string TextToShow;
+
     public bool IsActive = false;
 
-    private bool hasDialogue = false;
-    private bool hasInteract = false;
-    private bool hasPickup = false;
-
-    private DialogueAction dialogue;
-
-
-    List<BaseAction> actions = new List<BaseAction>();
-
-    public void Awake()
-    {
-        foreach(BaseAction action in GetComponents<BaseAction>())
-        {
-            switch(action){
-                case DialogueAction:
-                    hasDialogue = true;
-                    dialogue = action as DialogueAction;
-                    break;
-
-            }
-            
-        }
-
-    }
     public void Activate()
     {
         if (!IsActive)
@@ -44,20 +22,10 @@ public class InteractableObject : MonoBehaviour, IInteract
         }
     }
 
-    public void Update()
+    void Update()
     {
 
         if (!IsActive) return;
-
-
-        if (hasDialogue && Input.GetMouseButtonDown(0))
-        {
-            dialogue.Action();
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            AddingToInventory();
-        }
 
 
 
@@ -69,18 +37,12 @@ public class InteractableObject : MonoBehaviour, IInteract
             Debug.Log("Not selected still");
             onObjectDeSelect?.Invoke(this, EventArgs.Empty);
         }
-
-        
     }
 
-
-    private void Dialogue()
+    public string GetTextToShow()
     {
-        DialogueBox.Instance.SetDialogue("Dialogue time!");
+        return TextToShow;
     }
 
-    private void AddingToInventory()
-    {
-        Debug.Log("Added to Inventory");
-    }
+
 }
