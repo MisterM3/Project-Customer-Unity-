@@ -9,6 +9,31 @@ public class InteractableObject : MonoBehaviour, IInteract
     public event EventHandler onObjectSelect;
     public event EventHandler onObjectDeSelect;
     public bool IsActive = false;
+
+    private bool hasDialogue = false;
+    private bool hasInteract = false;
+    private bool hasPickup = false;
+
+    private DialogueAction dialogue;
+
+
+    List<BaseAction> actions = new List<BaseAction>();
+
+    public void Awake()
+    {
+        foreach(BaseAction action in GetComponents<BaseAction>())
+        {
+            switch(action){
+                case DialogueAction:
+                    hasDialogue = true;
+                    dialogue = action as DialogueAction;
+                    break;
+
+            }
+            
+        }
+
+    }
     public void Activate()
     {
         if (!IsActive)
@@ -25,9 +50,9 @@ public class InteractableObject : MonoBehaviour, IInteract
         if (!IsActive) return;
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (hasDialogue && Input.GetMouseButtonDown(0))
         {
-            Dialogue();
+            dialogue.Action();
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -51,7 +76,7 @@ public class InteractableObject : MonoBehaviour, IInteract
 
     private void Dialogue()
     {
-        Debug.Log("Dialogue");
+        DialogueBox.Instance.SetDialogue("Dialogue time!");
     }
 
     private void AddingToInventory()
