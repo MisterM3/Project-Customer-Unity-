@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UpdateObjectUI : MonoBehaviour
 {
-    [SerializeField] private Canvas uicanvas;
+    [SerializeField] private GameObject uicanvas;
     [SerializeField] private IInteract interactableObject;
 
 
@@ -29,11 +29,11 @@ public class UpdateObjectUI : MonoBehaviour
 
     private void ActivateUI()
     {
-        uicanvas.enabled = true;
+        uicanvas.SetActive(true);
     }
 
     private void DeActivateUI()
     {
-        uicanvas.enabled = false;
+        uicanvas.SetActive(false);
     }
 }
