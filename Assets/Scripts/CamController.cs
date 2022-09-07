@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
+
+    public static CamController instance;
+
+    private float zRotation = 0;
+
+    private void Awake()
+    {
+
+        if (instance != null)
+        {
+            Debug.LogError("There can only be one CamController, destroying" + gameObject);
+            Destroy(gameObject);
+        }
+        instance = this;
+    }
+
     [SerializeField]Transform camPosition;
     [SerializeField]Transform playerRotation;
     float yRotation;
@@ -19,6 +35,14 @@ public class CamController : MonoBehaviour
         transform.position = camPosition.position;
         yRotation -= Input.GetAxisRaw("Mouse Y");
         yRotation = Mathf.Clamp(yRotation, -90, 90);
-        transform.rotation = Quaternion.Euler(yRotation, playerRotation.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(yRotation, playerRotation.rotation.eulerAngles.y, zRotation);
+    }
+
+
+
+
+    public void AddZRotation(float rotation)
+    {
+        zRotation = rotation;
     }
 }

@@ -1614,6 +1614,7 @@ GameObject:
   - component: {fileID: 1629768664}
   - component: {fileID: 1629768663}
   - component: {fileID: 1629768667}
+  - component: {fileID: 1629768668}
   m_Layer: 6
   m_Name: InteractableObject
   m_TagString: Untagged
@@ -1713,6 +1714,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
+--- !u!114 &1629768668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629768662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765bda257023f1a4a96f4b432f121780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: 'Summer once again
+
+'
 --- !u!1 &1816851689
 GameObject:
   m_ObjectHideFlags: 0
