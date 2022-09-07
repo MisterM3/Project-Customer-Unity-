@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour, IInteract
 {
-    [SerializeField] private LayerMask layerMask;
+
+    public event EventHandler onObjectSelect;
+    public event EventHandler onObjectDeSelect;
     public bool IsActive = false;
     public void Activate()
     {
@@ -12,6 +15,7 @@ public class InteractableObject : MonoBehaviour, IInteract
         {
             Debug.Log("Selected!");
             IsActive = true;
+            onObjectSelect?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -25,6 +29,10 @@ public class InteractableObject : MonoBehaviour, IInteract
         {
             Dialogue();
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            AddingToInventory();
+        }
 
 
 
@@ -34,6 +42,7 @@ public class InteractableObject : MonoBehaviour, IInteract
         {
             IsActive = false;
             Debug.Log("Not selected still");
+            onObjectDeSelect?.Invoke(this, EventArgs.Empty);
         }
 
         
@@ -43,5 +52,10 @@ public class InteractableObject : MonoBehaviour, IInteract
     private void Dialogue()
     {
         Debug.Log("Dialogue");
+    }
+
+    private void AddingToInventory()
+    {
+        Debug.Log("Added to Inventory");
     }
 }
