@@ -51,7 +51,7 @@ public class InteractableObject : MonoBehaviour, IInteract
 
     private void Dialogue()
     {
-        Debug.Log("Dialogue");
+        DialogueBox.Instance.SetDialogue("Dialogue time!");
     }
 
     private void AddingToInventory()
