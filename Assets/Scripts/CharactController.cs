@@ -32,7 +32,7 @@ public class CharactController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 velocity = (transform.forward * yInput) + (transform.right * xInput);
-        velocity = velocity.normalized * Time.deltaTime * speed;
+        velocity = speed * Time.deltaTime * velocity.normalized;
         rb.velocity = velocity + new Vector3(0, rb.velocity.y, 0);
     }
     // Update is called once per frame
@@ -47,8 +47,10 @@ public class CharactController : MonoBehaviour
     private void CheckPickedObjectPosition()
     {
         if (holdedObject == null) return;
+
         Vector3 desiredPos = cameraTransform.position + cameraTransform.forward * 2;
         Vector3 distanceFromPlayer = desiredPos - holdedObject.transform.position;
+
         holdedObject.MoveToPos(desiredPos);
         if (distanceFromPlayer.magnitude > releaseDistance) ReleaseObject();
     }
@@ -59,18 +61,16 @@ public class CharactController : MonoBehaviour
         {
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(pickupDistance);
 
-            Pickable pick;
             if (isHoldingObject)
             {
                 ReleaseObject();
-                
+
             }
             else
             {
                 if (hit.transform == null) return;
-                if (isPickable(hit.transform.gameObject, out pick))
+                if (IsPickable(hit.transform.gameObject, out Pickable pick))
                 {
-                    pick.PickUp();
                     holdedObject = pick;
                     isHoldingObject = true;
                     Debug.Log("Picked up");
@@ -99,13 +99,12 @@ public class CharactController : MonoBehaviour
 
     void ReleaseObject()
     {
-        holdedObject.Release();
         holdedObject = null;
         isHoldingObject = false;
         Debug.Log("Released");
     }
-    bool isPickable(GameObject obj) => obj.GetComponent<Pickable>() != null;
-    bool isPickable(GameObject obj, out Pickable pickable)
+    bool IsPickable(GameObject obj) => obj.GetComponent<Pickable>() != null;
+    bool IsPickable(GameObject obj, out Pickable pickable)
     {
         pickable = obj.GetComponent<Pickable>();
         if (pickable != null)
