@@ -7,7 +7,7 @@ public class ObjectiveScene : MonoBehaviour
     public static ObjectiveScene Instance { get; private set; }
 
     [SerializeField] private List<Objective> objectivesList;
-    private int currentObjectiveNumber = 0;
+    [SerializeField] private int currentObjectiveNumber = 0;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class ObjectiveScene : MonoBehaviour
 
         if (objective.isTrigger && objective.triggerCollider != null)
         {
-            if (objective.triggerCollider == trigger) Debug.Log("In Trigger");
+            if (objective.triggerCollider == trigger) NextObjective();
             
         }
     }
@@ -66,16 +66,16 @@ public class ObjectiveScene : MonoBehaviour
 
         Objective objective = objectivesList[currentObjectiveNumber];
 
-
-        Debug.Log(objective.interactableObject);
-        Debug.Log(intObj);
-        Debug.Log(objective.interactableObject == intObj);
         if (!objective.isTrigger && objective.interactableObject != null)
         {
-            Debug.Log("here");
-            if (objective.interactableObject == intObj) Debug.Log("In Interact");
+            if (objective.interactableObject == intObj) NextObjective();
 
         }
+    }
+
+    private void NextObjective()
+    {
+        currentObjectiveNumber++;
     }
 
 }
