@@ -417,12 +417,6 @@ MonoBehaviour:
   - triggerCollider: {fileID: 0}
     interactableObject: {fileID: 1463144693}
     isTrigger: 0
-  - triggerCollider: {fileID: 892557478}
-    interactableObject: {fileID: 0}
-    isTrigger: 1
-  - triggerCollider: {fileID: 0}
-    interactableObject: {fileID: 0}
-    isTrigger: 0
   currentObjectiveNumber: 0
 --- !u!4 &827778667
 Transform:

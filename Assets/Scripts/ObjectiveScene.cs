@@ -76,6 +76,8 @@ public class ObjectiveScene : MonoBehaviour
     private void NextObjective()
     {
         currentObjectiveNumber++;
+        if (currentObjectiveNumber > objectivesList.Count) Debug.LogError("Objectivenumber is above count");
+        if (currentObjectiveNumber == objectivesList.Count) MySceneManager.instance.NextScene();
     }
 
 }
