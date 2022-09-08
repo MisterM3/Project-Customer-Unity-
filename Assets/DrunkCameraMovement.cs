@@ -7,6 +7,7 @@ public class DrunkCameraMovement : MonoBehaviour
 
     [SerializeField] AnimationCurve drunkMove;
     [SerializeField] float movementIntensity = 5f;
+    [SerializeField] float moveSpeed = 10f;
 
     float timer = 0;
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class DrunkCameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime / 10f;
+        timer += Time.deltaTime / moveSpeed;
         float CameraRotZ = drunkMove.Evaluate(timer) * movementIntensity;
 
        CamController.instance.AddZRotation(CameraRotZ);

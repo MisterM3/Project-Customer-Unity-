@@ -17,13 +17,11 @@ public class CharactController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-<<<<<<< HEAD
         rb = GetComponent<Rigidbody>();
 
-=======
-        rb = GetComponent<Rigidbody>();
 
->>>>>>> 5cbe09c65e7ac7c3a553a5a3749b9d10754f58df
+
+
      //   objectLayer = LayerMask.GetMask("Interactable");
     }
     private void FixedUpdate()
@@ -46,11 +44,10 @@ public class CharactController : MonoBehaviour
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (hit.transform != null)
             {
-                Debug.Log("Hit something");
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
             }
-            Debug.Log("end");
+ 
         }
     }
     void GetInput()

@@ -1434,7 +1434,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13410877
     - serializedVersion: 3
-      time: 1
+      time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1445,7 +1445,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  movementIntensity: 2
+  movementIntensity: 0.5
+  moveSpeed: 5
 --- !u!4 &1563225896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4826333334982826141, guid: c93a93279bcbd424aa590f69a23378c6,
