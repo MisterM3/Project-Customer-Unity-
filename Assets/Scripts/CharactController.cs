@@ -41,11 +41,25 @@ public class CharactController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            Debug.Log("te");
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (hit.transform != null)
             {
+
+                InteractableObjective intObjective = hit.transform.gameObject.GetComponent<InteractableObjective>();
+                if (intObjective != null)
+                {
+                    Debug.Log("324");
+                    intObjective.Interacted();
+                }
+
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
-                FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
+                if (interactableObject != null)
+                {
+                    Debug.Log("te4");
+                    FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
+                }
             }
  
         }
