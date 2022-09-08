@@ -30,6 +30,12 @@ public class MouseWorld : MonoBehaviour
         return ray;
     }
 
+    public RaycastHit GetObjectInFront(float distance)
+    {
+        RaycastHit hit;
+        Physics.Raycast(RayAtScreenPosition(), out hit,distance);
+        return hit;
+    }
     public RaycastHit GetObjectInFront(float distance,LayerMask layerMask)
     {
         RaycastHit hit;
