@@ -9,6 +9,8 @@ public class CharactController : MonoBehaviour
     [SerializeField]int speed;
     [SerializeField] int interactionDistance;
 
+    [SerializeField] LayerMask objectLayer;
+
     float xInput,yInput;
     float xRotation;
     // Start is called before the first frame update
@@ -16,6 +18,8 @@ public class CharactController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+
+     //   objectLayer = LayerMask.GetMask("Interactable");
     }
     private void FixedUpdate()
     {
@@ -34,12 +38,14 @@ public class CharactController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, LayerMask.GetMask("Interactable"));
+            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (hit.transform != null)
             {
+                Debug.Log("Hit something");
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
             }
+            Debug.Log("end");
         }
     }
     void GetInput()
