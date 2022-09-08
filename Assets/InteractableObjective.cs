@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class InteractableObjective : MonoBehaviour
 {
+    //private Collider col;
 
+    public void Start()
+    {
+     //   col = this.GetComponent<Collider>();
+    }
 
     public void Interacted()
     {
-        Debug.Log("next scene");
-        MySceneManager.instance.NextScene();
+        Debug.Log("inte");
+        ObjectiveScene.Instance.IsInteractTheObjective(this);
     }
 }

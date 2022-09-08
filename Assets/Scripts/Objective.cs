@@ -8,7 +8,7 @@ public struct Objective
 {
 
     public Collider triggerCollider;
-    public InteractableObject interactableObject;
+    public InteractableObjective interactableObject;
     public bool isTrigger;
 
     
