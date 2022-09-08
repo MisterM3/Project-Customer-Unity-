@@ -21,6 +21,14 @@ public class Pickable : MonoBehaviour
     public void MoveToPos(Vector3 vec)
     {
         Vector3 velocity = vec - transform.position;
-        rb.velocity = velocity * 4;
+        
+        float realMass = rb.mass*transform.position.y;
+        Vector3 verticalDrag = rb.mass * Vector3.down;
+
+        //velocity.y = rb.velocity.y < 0 ? velocity.y * 4 : Mathf.Min(0, velocity.y + verticalDrag.y);
+
+        velocity = new Vector3(velocity.x * 4, velocity.y + verticalDrag.y, velocity.z * 4);
+
+        rb.velocity = new Vector3(velocity.x, velocity.y, velocity.z);
     }
 }

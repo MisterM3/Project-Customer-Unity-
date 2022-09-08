@@ -63,6 +63,7 @@ public class CharactController : MonoBehaviour
             if (isHoldingObject)
             {
                 ReleaseObject();
+                
             }
             else
             {
@@ -72,6 +73,7 @@ public class CharactController : MonoBehaviour
                     pick.PickUp();
                     holdedObject = pick;
                     isHoldingObject = true;
+                    Debug.Log("Picked up");
                 }
             }
 
@@ -100,6 +102,7 @@ public class CharactController : MonoBehaviour
         holdedObject.Release();
         holdedObject = null;
         isHoldingObject = false;
+        Debug.Log("Released");
     }
     bool isPickable(GameObject obj) => obj.GetComponent<Pickable>() != null;
     bool isPickable(GameObject obj, out Pickable pickable)
