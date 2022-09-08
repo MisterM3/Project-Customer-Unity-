@@ -26,6 +26,7 @@ public class MouseWorld : MonoBehaviour
 
     public Ray RayAtScreenPosition()
     {
+        Debug.Log("sTART RAY");
         Ray ray = new Ray(_camera.transform.position,_camera.transform.forward);
         return ray;
     }
@@ -34,6 +35,7 @@ public class MouseWorld : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(RayAtScreenPosition(),out hit,distance,layerMask);
+        Debug.Log(hit);
         return hit;
     }
 
