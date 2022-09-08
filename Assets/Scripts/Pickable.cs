@@ -24,10 +24,8 @@ public class Pickable : MonoBehaviour
         
         float realMass = rb.mass*transform.position.y;
         Vector3 verticalDrag = rb.mass * Vector3.down;
-
-        //velocity.y = rb.velocity.y < 0 ? velocity.y * 4 : Mathf.Min(0, velocity.y + verticalDrag.y);
-
-        velocity = new Vector3(velocity.x * 4, velocity.y + verticalDrag.y, velocity.z * 4);
+        velocity.y = velocity.y < 0 ? rb.velocity.y + velocity.y : velocity.y + verticalDrag.y;
+        velocity = new Vector3(velocity.x * 4, velocity.y, velocity.z * 4);
 
         rb.velocity = new Vector3(velocity.x, velocity.y, velocity.z);
     }
