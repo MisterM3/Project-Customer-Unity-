@@ -795,7 +795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camPosition: {fileID: 1897396283}
-  playerRotation: {fileID: 0}
 --- !u!1 &447529791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,6 +1810,7 @@ GameObject:
   - component: {fileID: 1516783956}
   - component: {fileID: 1516783955}
   - component: {fileID: 1516783954}
+  - component: {fileID: 1516783959}
   m_Layer: 6
   m_Name: InteractableObject (1)
   m_TagString: Untagged
@@ -1911,6 +1911,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516783959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516783953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
+  outlineScaleFactor: -1.1
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1598153478
 GameObject:
   m_ObjectHideFlags: 0
