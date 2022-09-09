@@ -22,6 +22,13 @@ public class InteractableObject : MonoBehaviour, IInteract
         }
     }
 
+    public void PickUp()
+    {
+        InventoryManager.Instance.AddItemToInventory(this.transform);
+
+        
+    }
+
     void Update()
     {
 

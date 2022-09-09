@@ -88,6 +88,24 @@ public class CharactController : MonoBehaviour
             }
 
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (!InventoryManager.Instance.GetIsEmpty())
+            {
+                InventoryManager.Instance.RemoveItemFromInventory();
+                return;
+            }
+
+            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
+            if (hit.transform != null)
+            {
+                Debug.Log("char");
+                InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
+                interactableObject.PickUp();
+            }
+
+        }
+
     }
     void GetInput()
     {
