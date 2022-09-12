@@ -824,6 +824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681b207c206dce4ea3e34e829c49b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 674329775}
+  inventoryPosition: {fileID: 1867465965}
 --- !u!4 &252703410
 Transform:
   m_ObjectHideFlags: 0
@@ -1104,6 +1106,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &674329775 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7811345450916002801, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
+    type: 3}
+  m_PrefabInstance: {fileID: 735307426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &688287340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,8 +1353,18 @@ PrefabInstance:
       objectReference: {fileID: 205673655}
     - target: {fileID: 7811345450916002800, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
         type: 3}
-      propertyPath: interactionDistance
+      propertyPath: pickupDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811345450916002800, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
+        type: 3}
+      propertyPath: releaseDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811345450916002800, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
+        type: 3}
+      propertyPath: interactionDistance
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7811345450916002801, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
         type: 3}
@@ -2529,6 +2547,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828488321}
   m_CullTransparentMesh: 1
+--- !u!4 &1867465965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 468426477290491856, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
+    type: 3}
+  m_PrefabInstance: {fileID: 735307426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880552712
 GameObject:
   m_ObjectHideFlags: 0

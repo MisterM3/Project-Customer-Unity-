@@ -96,7 +96,9 @@ public class CharactController : MonoBehaviour
                 return;
             }
 
+            Debug.Log("feafa");
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
+            Debug.Log(hit.transform);
             if (hit.transform != null)
             {
                 Debug.Log("char");

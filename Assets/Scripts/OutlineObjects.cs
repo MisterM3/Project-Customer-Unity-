@@ -21,13 +21,18 @@ public class OutlineObjects : MonoBehaviour
 
     void Start()
     {
-
+        Destroy(outlineRenderer);        
         outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
 
         IInteract interactableObject = GetComponent<IInteract>();
         interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
         interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
 
+    }
+
+    public void Update()
+    {
+    //    outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
     }
 
     private void InteractableObject_onObjectSelect(object sender, EventArgs e)
