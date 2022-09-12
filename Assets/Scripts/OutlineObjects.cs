@@ -20,20 +20,15 @@ public class OutlineObjects : MonoBehaviour
 
 
     void Start()
-    {
-        Destroy(outlineRenderer);        
+    {      
         outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
 
-        IInteract interactableObject = GetComponent<IInteract>();
+        IInteract interactableObject = GetComponentInParent<IInteract>();
         interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
         interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
 
     }
 
-    public void Update()
-    {
-    //    outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
-    }
 
     private void InteractableObject_onObjectSelect(object sender, EventArgs e)
     {
@@ -44,6 +39,7 @@ public class OutlineObjects : MonoBehaviour
     {
         DeActiveOutline();
     }
+
 
     Renderer CreateOutline(Material outlineMat, float scaleFactor, Color color)
 
@@ -67,7 +63,7 @@ public class OutlineObjects : MonoBehaviour
 
         outlineObject.GetComponent<OutlineObjects>().enabled = false;
 
-        outlineObject.GetComponent<Collider>().enabled = false;
+     //   outlineObject.GetComponent<Collider>().enabled = false;
 
 
 
