@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MySceneManager : MonoBehaviour
 {
-    static MySceneManager instance;
+    public static MySceneManager instance { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +32,13 @@ public class MySceneManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == sceneNumber) return;
         SceneManager.LoadScene(sceneNumber);
+    }
+
+    /// <summary>
+    /// Call this method to load to the next scene in the buildindex
+    /// </summary>
+    public void NextScene()
+    {
+        ChangeScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
