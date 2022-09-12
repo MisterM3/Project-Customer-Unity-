@@ -23,7 +23,7 @@ public class OutlineObjects : MonoBehaviour
     {      
         outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
 
-        IInteract interactableObject = GetComponentInParent<IInteract>();
+        InteractableObject interactableObject = GetComponentInParent<InteractableObject>();
         interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
         interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
 
@@ -32,6 +32,7 @@ public class OutlineObjects : MonoBehaviour
 
     private void InteractableObject_onObjectSelect(object sender, EventArgs e)
     {
+
         ActivateOutline();
     }
 
@@ -78,6 +79,7 @@ public class OutlineObjects : MonoBehaviour
 
     private void ActivateOutline()
     {
+        Debug.Log("active");
         outlineRenderer.enabled = true;
     }
     private void DeActiveOutline()
