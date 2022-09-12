@@ -12,6 +12,7 @@ public class CharactController : MonoBehaviour
     Transform cameraTransform;
 
     [SerializeField] LayerMask objectLayer;
+    RaycastHit frontHit;
 
     float xInput, yInput;
     float xRotation;
@@ -43,6 +44,11 @@ public class CharactController : MonoBehaviour
         CheckPickedObjectPosition();
         transform.rotation = Quaternion.Euler(new Vector3(0, xRotation));
     }
+    private void LateUpdate()
+    {
+        if (frontHit.transform == null) return;
+        if (frontHit.transform.TryGetComponent(out OutlineObjects outline)) outline.ActivateOutline();
+    }
 
     private void CheckPickedObjectPosition()
     {
@@ -57,9 +63,11 @@ public class CharactController : MonoBehaviour
 
     void CheckInteraction()
     {
+            frontHit = MouseWorld.Instance.GetObjectInFront(pickupDistance);
+        if (frontHit.transform == null) return;
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(pickupDistance);
 
             if (isHoldingObject)
             {
@@ -68,8 +76,8 @@ public class CharactController : MonoBehaviour
             }
             else
             {
-                if (hit.transform == null) return;
-                if (IsPickable(hit.transform.gameObject, out Pickable pick))
+                if (frontHit.transform == null) return;
+                if (IsPickable(frontHit.transform.gameObject, out Pickable pick))
                 {
                     holdedObject = pick;
                     isHoldingObject = true;
@@ -80,13 +88,13 @@ public class CharactController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (hit.transform != null)
+            //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
+            if (frontHit.transform != null)
             {
-                InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
+                //InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 //FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
 
-                if (hit.transform.TryGetComponent(out FuncExetion func))
+                if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
                     Debug.Log("boom!");
                     func.Interact();
@@ -102,11 +110,11 @@ public class CharactController : MonoBehaviour
                 return;
             }
 
-            RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (hit.transform != null)
+            //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
+            if (frontHit.transform != null)
             {
                 Debug.Log("char");
-                InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
+                InteractableObject interactableObject = frontHit.transform.gameObject.GetComponent<InteractableObject>();
                 interactableObject.PickUp();
                 
             }
