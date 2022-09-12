@@ -84,7 +84,13 @@ public class CharactController : MonoBehaviour
             if (hit.transform != null)
             {
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
-                FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
+                //FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
+
+                if (hit.transform.TryGetComponent(out FuncExetion func))
+                {
+                    Debug.Log("boom!");
+                    func.Interact();
+                }
             }
 
         }
@@ -102,6 +108,7 @@ public class CharactController : MonoBehaviour
                 Debug.Log("char");
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 interactableObject.PickUp();
+                
             }
 
         }
