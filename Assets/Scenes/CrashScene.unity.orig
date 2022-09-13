@@ -5050,7 +5050,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+<<<<<<< HEAD
+--- !u!1 &1394024327
+=======
 --- !u!1 &1369563671
+>>>>>>> origin/UIcreation
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5058,16 +5062,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 1394024329}
+  - component: {fileID: 1394024328}
+  m_Layer: 0
+  m_Name: UserSettings
+=======
   - component: {fileID: 1369563672}
   - component: {fileID: 1369563674}
   - component: {fileID: 1369563673}
   m_Layer: 5
   m_Name: mouse
+>>>>>>> origin/UIcreation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+--- !u!114 &1394024328
+=======
 --- !u!224 &1369563672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5089,11 +5103,22 @@ RectTransform:
   m_SizeDelta: {x: 64.8465, y: 100.8723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369563673
+>>>>>>> origin/UIcreation
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1394024327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff491e9ddf43f24f8ca0da5c65d422d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1394024329
+Transform:
+=======
   m_GameObject: {fileID: 1369563671}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -5120,10 +5145,22 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1369563674
 CanvasRenderer:
+>>>>>>> origin/UIcreation
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1394024327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 959.87634, y: 577.7895, z: -706.9852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
   m_GameObject: {fileID: 1369563671}
   m_CullTransparentMesh: 1
 --- !u!1 &1416137480
@@ -5164,6 +5201,7 @@ RectTransform:
   m_AnchoredPosition: {x: -20.587585, y: -85.0093}
   m_SizeDelta: {x: 200.8294, y: 136.0897}
   m_Pivot: {x: 0.5, y: 0.5}
+>>>>>>> origin/UIcreation
 --- !u!1 &1423992871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6474,12 +6512,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+<<<<<<< HEAD
+--- !u!114 &1606677603
+MonoBehaviour:
+=======
 --- !u!1 &1626154917
 GameObject:
+>>>>>>> origin/UIcreation
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1606677598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2550f7e7416c62a4ba4bfe39657c437b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkBackground: {fileID: 453533642}
+  navigationPanel: {fileID: 862418361}
+  optionsPanel: {fileID: 1873368227}
+  controlsPanel: {fileID: 2117114061}
+=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626154918}
@@ -6512,6 +6567,7 @@ RectTransform:
   m_AnchoredPosition: {x: 117, y: 0}
   m_SizeDelta: {x: 234, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
+>>>>>>> origin/UIcreation
 --- !u!1 &1640126781
 GameObject:
   m_ObjectHideFlags: 0
