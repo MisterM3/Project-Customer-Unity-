@@ -83,6 +83,12 @@ public class CharactController : MonoBehaviour
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (hit.transform != null)
             {
+
+                if (hit.transform.gameObject.TryGetComponent<InteractableObjective>(out InteractableObjective interactableObjective))
+                {
+                    interactableObjective.Interacted();
+                    return;
+                }
                 InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
             }
