@@ -8,7 +8,7 @@ public class SliderInteraction : MonoBehaviour
 {
     [SerializeField]Slider slider;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] UserSettings.Settings settingToUpdate;
+    [SerializeField] UserSettings.FloatSettings settingToUpdate;
     UserSettings userSetting;
     float lastValue;
     private void Start()

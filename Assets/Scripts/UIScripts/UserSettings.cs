@@ -5,9 +5,14 @@ using UnityEngine;
 public class UserSettings : MonoBehaviour
 {
     static UserSettings userSettings;
-    public enum Settings { sound = 0, brightness = 1, sensetivity = 2 };
+    public enum FloatSettings { sound = 0, brightness = 1, sensetivity = 2 };
+    public enum BoolSettings { FullScreen, Cursor };
+
     float sound = .2f, brightness = .2f, sensetivity = .2f;
-    Dictionary<Settings, float> settingsValues;
+    bool fullScreen = true, cursor = true;
+
+    Dictionary<FloatSettings, float> floatSettingsValues;
+    Dictionary<BoolSettings, bool> boolSettingsValues;
 
     private void Start()
     {
@@ -18,22 +23,32 @@ public class UserSettings : MonoBehaviour
         if (userSettings == null)
         {
             userSettings = this;
-            settingsValues = new Dictionary<Settings, float>();
-
-            settingsValues.Add(Settings.sound, sound);
-            settingsValues.Add(Settings.brightness, brightness);
-            settingsValues.Add(Settings.sensetivity, sensetivity);
+            CreateBoolDictionary();
+            CreateFloatDictionary();
 
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void UpdateSetting(float value, Settings setting)
+    void CreateFloatDictionary()
     {
-        settingsValues[setting] = value;
+        floatSettingsValues = new Dictionary<FloatSettings, float>();
+
+        floatSettingsValues.Add(FloatSettings.sound, sound);
+        floatSettingsValues.Add(FloatSettings.brightness, brightness);
+        floatSettingsValues.Add(FloatSettings.sensetivity, sensetivity);
     }
-    public void UpdateSetting(float value, int settingToUpdate)
+    void CreateBoolDictionary()
     {
-        settingsValues[(Settings)settingToUpdate] = value;
+        boolSettingsValues = new Dictionary<BoolSettings, bool>();
+        boolSettingsValues.Add(BoolSettings.FullScreen, fullScreen);
+        boolSettingsValues.Add(BoolSettings.Cursor, cursor);
+
     }
-    public float GetSetting(Settings settingToGet) => settingsValues[settingToGet];
+
+    public void UpdateSetting(float value, FloatSettings setting) => floatSettingsValues[setting] = value;
+    public void UpdateSetting(bool value, BoolSettings setting) => boolSettingsValues[setting] = value;
+
+    
+    public float GetSetting(FloatSettings settingToGet) => floatSettingsValues[settingToGet];
+    public bool GetSetting(BoolSettings settingToGet) => boolSettingsValues[settingToGet];
 }

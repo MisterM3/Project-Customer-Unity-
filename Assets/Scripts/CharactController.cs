@@ -18,7 +18,7 @@ public class CharactController : MonoBehaviour
 
     [Header("Item")]
     #region Holding object variables
-    [SerializeField,Tooltip("Max distance to hold the object")] float releaseDistance;
+    [SerializeField, Tooltip("Max distance to hold the object")] float releaseDistance;
     bool isHoldingObject;
     Pickable holdedObject;
     #endregion
@@ -90,11 +90,16 @@ public class CharactController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            if (!InventoryManager.Instance.GetIsEmpty())
+            if (InventoryManager.Instance != null)
             {
-                InventoryManager.Instance.RemoveItemFromInventory();
-                return;
+
+                if (!InventoryManager.Instance.GetIsEmpty())
+                {
+                    InventoryManager.Instance.RemoveItemFromInventory();
+                    return;
+                }
             }
+            else Debug.LogError("No inventory manager!");
 
             RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (hit.transform != null)
