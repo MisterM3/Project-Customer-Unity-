@@ -36,7 +36,7 @@ public class CamController : MonoBehaviour
         transform.position = camPosition.position;
         yRotation -= Input.GetAxisRaw("Mouse Y");
         yRotation = Mathf.Clamp(yRotation, -90, 90);
-        transform.rotation = Quaternion.Euler(yRotation, playerRotation.rotation.eulerAngles.y, zRotation);
+        transform.rotation = Quaternion.Euler(yRotation, playerRotation.transform.eulerAngles.y, zRotation);
     }
 
 

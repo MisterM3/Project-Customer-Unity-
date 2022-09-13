@@ -22,7 +22,7 @@ public class SelectingTool : MonoBehaviour
 
         if (Physics.Raycast(lookingAt, out RaycastHit info, distanceRay, layerMask))
         {
-            info.collider.gameObject.GetComponentInParent<IInteract>().Activate();
+            //info.collider.gameObject.GetComponentInParent<IInteract>().Activate();
         }
     }
 }

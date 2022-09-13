@@ -15,6 +15,9 @@ public class OutlineObjects : MonoBehaviour
 
     [SerializeField] private Color outlineColor;
 
+    [SerializeField] private bool transformOfParent = false;
+    [SerializeField] private bool invert = false;
+
     private Renderer outlineRenderer;
 
 
@@ -23,29 +26,44 @@ public class OutlineObjects : MonoBehaviour
     {      
         outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
 
-        IInteract interactableObject = GetComponentInParent<IInteract>();
-        interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
-        interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
+        //IInteract interactableObject = GetComponent<IInteract>();
+        //interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
+        //interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
 
     }
 
-
-    private void InteractableObject_onObjectSelect(object sender, EventArgs e)
+    private void Update()
     {
-        ActivateOutline();
+        if (outlineRenderer.enabled)
+        {
+            DeActiveOutline();
+        }
     }
-
-    private void InteractableObject_onObjectDeSelect(object sender, EventArgs e)
-    {
-        DeActiveOutline();
-    }
-
+    
 
     Renderer CreateOutline(Material outlineMat, float scaleFactor, Color color)
 
     {
 
-        GameObject outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation, transform);
+
+        Quaternion extrarotation;
+
+        if (invert) extrarotation = Quaternion.Euler(0, 180, 0);
+        else extrarotation = Quaternion.Euler(0, 0, 0);
+        GameObject outlineObject;
+
+        if (transformOfParent)
+        {
+           
+            outlineObject = Instantiate(this.gameObject, transform.parent.position, transform.parent.rotation * extrarotation, transform.parent);
+        }
+        else
+        {
+            outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation * extrarotation, transform);
+           // outlineObject = Instantiate(this.gameObject, Vector3.zero, transform.rotation * extrarotation, transform);
+        }
+
+        outlineObject.transform.localScale = new Vector3(1, 1, 1);
 
         Renderer rend = outlineObject.GetComponent<Renderer>();
 
@@ -76,11 +94,12 @@ public class OutlineObjects : MonoBehaviour
     }
 
 
-    private void ActivateOutline()
+    public void ActivateOutline()
     {
+        Debug.Log("active");
         outlineRenderer.enabled = true;
     }
-    private void DeActiveOutline()
+    public void DeActiveOutline()
     {
         outlineRenderer.enabled = false;
     }
