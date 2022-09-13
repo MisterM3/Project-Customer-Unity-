@@ -24,21 +24,20 @@ public class OutlineObjects : MonoBehaviour
 
         outlineRenderer = CreateOutline(outlineMaterial, outlineScaleFactor, outlineColor);
 
-        IInteract interactableObject = GetComponent<IInteract>();
-        interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
-        interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
+        //IInteract interactableObject = GetComponent<IInteract>();
+        //interactableObject.onObjectSelect += InteractableObject_onObjectSelect;
+        //interactableObject.onObjectDeSelect += InteractableObject_onObjectDeSelect;
 
     }
 
-    private void InteractableObject_onObjectSelect(object sender, EventArgs e)
+    private void Update()
     {
-        ActivateOutline();
+        if (outlineRenderer.enabled)
+        {
+            DeActiveOutline();
+        }
     }
-
-    private void InteractableObject_onObjectDeSelect(object sender, EventArgs e)
-    {
-        DeActiveOutline();
-    }
+    
 
     Renderer CreateOutline(Material outlineMat, float scaleFactor, Color color)
 
@@ -75,11 +74,11 @@ public class OutlineObjects : MonoBehaviour
     }
 
 
-    private void ActivateOutline()
+    public void ActivateOutline()
     {
         outlineRenderer.enabled = true;
     }
-    private void DeActiveOutline()
+    public void DeActiveOutline()
     {
         outlineRenderer.enabled = false;
     }
