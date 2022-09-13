@@ -15,6 +15,9 @@ public class OutlineObjects : MonoBehaviour
 
     [SerializeField] private Color outlineColor;
 
+    [SerializeField] private bool transformOfParent = false;
+    [SerializeField] private bool invert = false;
+
     private Renderer outlineRenderer;
 
 
@@ -46,7 +49,24 @@ public class OutlineObjects : MonoBehaviour
 
     {
 
-        GameObject outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation, transform);
+
+        Quaternion extrarotation;
+
+        if (invert) extrarotation = Quaternion.Euler(0, 180, 0);
+        else extrarotation = Quaternion.Euler(0, 0, 0);
+        GameObject outlineObject;
+
+        if (transformOfParent)
+        {
+           
+            outlineObject = Instantiate(this.gameObject, transform.parent.position, transform.parent.rotation * extrarotation, transform.parent);
+        }
+        else
+        {
+            outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation * extrarotation, transform.parent);
+        }
+
+        outlineObject.transform.localScale = new Vector3(1, 1, 1);
 
         Renderer rend = outlineObject.GetComponent<Renderer>();
 
