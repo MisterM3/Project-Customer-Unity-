@@ -63,7 +63,8 @@ public class OutlineObjects : MonoBehaviour
         }
         else
         {
-            outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation * extrarotation, transform.parent);
+            outlineObject = Instantiate(this.gameObject, transform.position, transform.rotation * extrarotation, transform);
+           // outlineObject = Instantiate(this.gameObject, Vector3.zero, transform.rotation * extrarotation, transform);
         }
 
         outlineObject.transform.localScale = new Vector3(1, 1, 1);
