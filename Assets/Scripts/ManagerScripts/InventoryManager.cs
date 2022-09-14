@@ -48,6 +48,7 @@ public class InventoryManager : MonoBehaviour
         itemInInventory = null;
         isEmpty = true;
     }
+
     public Transform GetItemInInventory()
     {
         return itemInInventory;

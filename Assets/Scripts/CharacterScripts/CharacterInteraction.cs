@@ -28,7 +28,7 @@ public class CharacterInteraction : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (frontHit.transform == null) return;
+       if (frontHit.transform == null) return;
         if (frontHit.transform.TryGetComponent(out OutlineObjects outline)) outline.ActivateOutline();
     }
     private void CheckPickedObjectPosition()
@@ -45,6 +45,7 @@ public class CharacterInteraction : MonoBehaviour
     {
         frontHit = MouseWorld.Instance.GetObjectInFront(pickupDistance,objectLayer);
         //if (frontHit.transform == null) return;
+        
 
         if (Input.GetKeyDown(KeyCode.E))
         {
