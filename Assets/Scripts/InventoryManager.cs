@@ -35,6 +35,11 @@ public class InventoryManager : MonoBehaviour
         if (!isEmpty) return;
 
         item.GetComponent<Collider>().enabled = false;
+        if (item.TryGetComponent<Rigidbody>(out Rigidbody rb))
+        {
+            rb.useGravity = false;
+            rb.mass = 0;
+        }
         item.parent = player;
         item.transform.position = inventoryPosition.position;
 
@@ -45,6 +50,7 @@ public class InventoryManager : MonoBehaviour
     {
         itemInInventory.parent = null;
         itemInInventory.GetComponent<Collider>().enabled = true;
+        if (itemInInventory.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.WakeUp();
         itemInInventory = null;
         isEmpty = true;
     }

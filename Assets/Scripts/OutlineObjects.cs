@@ -13,7 +13,7 @@ public class OutlineObjects : MonoBehaviour
 
     [SerializeField] private float outlineScaleFactor = -1.1f;
 
-    [SerializeField] private Color outlineColor;
+    [SerializeField] private Color outlineColor; 
 
     [SerializeField] private bool transformOfParent = false;
     [SerializeField] private bool invert = false;
