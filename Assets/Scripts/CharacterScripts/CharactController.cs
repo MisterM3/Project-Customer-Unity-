@@ -9,7 +9,7 @@ public class CharactController : MonoBehaviour
     Rigidbody rb;
     [SerializeField] int speed;
 
-
+    UserSettings settings;
     float xInput, yInput;
     float xRotation;
 
@@ -18,6 +18,7 @@ public class CharactController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+        settings = FindObjectOfType<UserSettings>();
     }
     private void FixedUpdate()
     {
@@ -31,12 +32,12 @@ public class CharactController : MonoBehaviour
         GetInput();
         transform.rotation = Quaternion.Euler(new Vector3(0, xRotation));
     }
-    
+
     void GetInput()
     {
         yInput = Input.GetAxisRaw("Vertical");
         xInput = Input.GetAxisRaw("Horizontal");
 
-        xRotation += Input.GetAxisRaw("Mouse X");
+        xRotation += Input.GetAxisRaw("Mouse X") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) + .5f);
     }
 }

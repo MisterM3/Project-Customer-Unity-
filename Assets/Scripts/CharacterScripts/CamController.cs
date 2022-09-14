@@ -7,6 +7,7 @@ public class CamController : MonoBehaviour
 
     public static CamController instance;
 
+    UserSettings settings;
     private float zRotation = 0;
 
     private void Awake()
@@ -26,15 +27,15 @@ public class CamController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         playerRotation = GameObject.FindGameObjectWithTag("Player").transform;
+        settings = FindObjectOfType<UserSettings>();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position = camPosition.position;
-        yRotation -= Input.GetAxisRaw("Mouse Y");
+        yRotation -= Input.GetAxisRaw("Mouse Y") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) +.5f);
         yRotation = Mathf.Clamp(yRotation, -90, 90);
         transform.rotation = Quaternion.Euler(yRotation, playerRotation.transform.eulerAngles.y, zRotation);
     }
