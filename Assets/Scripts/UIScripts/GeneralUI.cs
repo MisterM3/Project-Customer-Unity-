@@ -5,7 +5,6 @@ using UnityEngine;
 public class GeneralUI : MonoBehaviour
 {
     bool isPaused;
-    //Panels panels;
     public enum Panels { Navigation = 0,Options = 1, Controls = 2};
     [SerializeField]GameObject darkBackground;
     [SerializeField]GameObject navigationPanel;
@@ -44,7 +43,7 @@ public class GeneralUI : MonoBehaviour
 
         Time.timeScale = 1;
         darkBackground.SetActive(false);
-        navigationPanel.SetActive(false);
+        TurnOffPanels();
         Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
     }
