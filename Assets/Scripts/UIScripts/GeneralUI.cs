@@ -5,11 +5,12 @@ using UnityEngine;
 public class GeneralUI : MonoBehaviour
 {
     bool isPaused;
-    public enum Panels { Navigation = 0,Options = 1, Controls = 2};
-    [SerializeField]GameObject darkBackground;
-    [SerializeField]GameObject navigationPanel;
-    [SerializeField]GameObject optionsPanel;
-    [SerializeField]GameObject controlsPanel;
+    public enum Panels { Navigation = 0, Options = 1, Controls = 2 };
+    [SerializeField] GameObject darkBackground;
+    [SerializeField] GameObject navigationPanel;
+    [SerializeField] GameObject optionsPanel;
+    [SerializeField] GameObject controlsPanel;
+    [SerializeField] GameObject ActiveUIPanel;
     Dictionary<Panels, GameObject> panels = new Dictionary<Panels, GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class GeneralUI : MonoBehaviour
         panels.Add(Panels.Navigation, navigationPanel);
         panels.Add(Panels.Options, optionsPanel);
         panels.Add(Panels.Controls, controlsPanel);
+
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class GeneralUI : MonoBehaviour
                 Time.timeScale = 0f;
                 darkBackground.SetActive(true);
                 navigationPanel.SetActive(true);
+                ActiveUIPanel.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 isPaused = true;
             }
@@ -36,7 +39,7 @@ public class GeneralUI : MonoBehaviour
             {
                 Resume();
             }
-        }   
+        }
     }
     public void Resume()
     {
@@ -44,6 +47,7 @@ public class GeneralUI : MonoBehaviour
         Time.timeScale = 1;
         darkBackground.SetActive(false);
         TurnOffPanels();
+        ActiveUIPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
     }
@@ -64,8 +68,13 @@ public class GeneralUI : MonoBehaviour
     }
     void TurnOffPanels()
     {
-        navigationPanel.SetActive(false );
-        optionsPanel.SetActive(false );
-        controlsPanel.SetActive(false );
+        /*for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject obj = transform.GetChild(i).gameObject;
+            obj.SetActive(false);
+        }*/
+        navigationPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
     }
 }
