@@ -93,7 +93,7 @@ public class CharactController : MonoBehaviour
             {
                 //InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
                 //FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
-
+                Debug.Log(gameObject);
                 if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
                     Debug.Log("boom!");
