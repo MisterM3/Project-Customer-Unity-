@@ -502,7 +502,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -703,6 +703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 596159713}
   - component: {fileID: 596159712}
+  - component: {fileID: 596159714}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -726,7 +727,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: c6bcfc6ef3421ae4181f718795313cde, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 57484aed4cea86b4589ee8f89484296d, type: 2}
 --- !u!4 &596159713
 Transform:
   m_ObjectHideFlags: 0
@@ -742,6 +743,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596159714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596159711}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 43af0aa8908dcef478298c20743549e5, type: 2}
 --- !u!1 &637140627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1129,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 2024791371}
   CharactersPerSecond: 20
+--- !u!1 &1207354639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207354641}
+  - component: {fileID: 1207354640}
+  m_Layer: 0
+  m_Name: Dying
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1207354640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207354639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b4c568e5675c54fa935efcc2c99a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVolume: {fileID: 596159712}
+  effectJustBeforeDying: {fileID: 11400000, guid: 43af0aa8908dcef478298c20743549e5,
+    type: 2}
+  totalStages: 8
+--- !u!4 &1207354641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207354639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290726452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1545,8 @@ MonoBehaviour:
   outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
   outlineScaleFactor: -1.1
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  transformOfParent: 0
+  invert: 0
 --- !u!1 &1598153478
 GameObject:
   m_ObjectHideFlags: 0
