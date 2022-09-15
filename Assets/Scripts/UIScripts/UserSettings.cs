@@ -46,8 +46,16 @@ public class UserSettings : MonoBehaviour
     }
 
     public void UpdateSetting(float value, FloatSettings setting) => floatSettingsValues[setting] = value;
-    public void UpdateSetting(bool value, BoolSettings setting) => boolSettingsValues[setting] = value;
-
+    public void UpdateSetting(bool value, BoolSettings setting)
+    {
+        boolSettingsValues[setting] = value;
+        switch (setting)
+        {
+            case BoolSettings.FullScreen:
+                Screen.fullScreen = value;
+                break;
+        }
+    }
     
     public float GetSetting(FloatSettings settingToGet) => floatSettingsValues[settingToGet];
     public bool GetSetting(BoolSettings settingToGet) => boolSettingsValues[settingToGet];
