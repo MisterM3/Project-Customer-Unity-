@@ -66,6 +66,7 @@ public class GeneralUI : MonoBehaviour
         TurnOffPanels();
         panels[(Panels)UIvalue].SetActive(true);
     }
+
     void TurnOffPanels()
     {
         /*for (int i = 0; i < transform.childCount; i++)

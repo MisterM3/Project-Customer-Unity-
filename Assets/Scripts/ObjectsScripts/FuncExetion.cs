@@ -37,6 +37,7 @@ public class WrappedFunc
             act?.Invoke();
             return;
         }
+
         InventoryManager invMan = GameObject.FindObjectOfType<InventoryManager>();
         if(invMan == null)
         {

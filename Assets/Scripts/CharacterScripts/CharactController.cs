@@ -31,6 +31,7 @@ public class CharactController : MonoBehaviour
     {
         GetInput();
         transform.rotation = Quaternion.Euler(new Vector3(0, xRotation));
+        
     }
 
     void GetInput()
@@ -38,6 +39,6 @@ public class CharactController : MonoBehaviour
         yInput = Input.GetAxisRaw("Vertical");
         xInput = Input.GetAxisRaw("Horizontal");
 
-        xRotation += Input.GetAxisRaw("Mouse X") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) + .5f);
+        xRotation += Input.GetAxisRaw("Mouse X") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) + .5f) * Time.timeScale;
     }
 }

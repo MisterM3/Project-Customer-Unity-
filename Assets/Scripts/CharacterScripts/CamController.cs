@@ -35,7 +35,7 @@ public class CamController : MonoBehaviour
     void Update()
     {
         transform.position = camPosition.position;
-        yRotation -= Input.GetAxisRaw("Mouse Y") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) +.5f);
+        yRotation -= Input.GetAxisRaw("Mouse Y") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) +.5f) * Time.timeScale;
         yRotation = Mathf.Clamp(yRotation, -90, 90);
         transform.rotation = Quaternion.Euler(yRotation, playerRotation.transform.eulerAngles.y, zRotation);
     }
