@@ -8,7 +8,7 @@ public class UserSettings : MonoBehaviour
     public enum FloatSettings { sound = 0, brightness = 1, sensetivity = 2 };
     public enum BoolSettings { FullScreen, Cursor };
 
-    float sound = .2f, brightness = .2f, sensetivity = .2f;
+    float sound = .3f, brightness = .2f, sensetivity = .5f;
     bool fullScreen = true, cursor = true;
 
     Dictionary<FloatSettings, float> floatSettingsValues;
