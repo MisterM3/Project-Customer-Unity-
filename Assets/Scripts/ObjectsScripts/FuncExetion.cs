@@ -44,7 +44,7 @@ public class WrappedFunc
             Debug.LogError("No inventory manager found!");
             return;
         }
-        if(!invMan.GetIsEmpty() && invMan.GetItemInInventory().gameObject == obj)
+        if(!invMan.IsEmpty() && invMan.GetItemInInventory().gameObject == obj)
         {
             act?.Invoke();
         }

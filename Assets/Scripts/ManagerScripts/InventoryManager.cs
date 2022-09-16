@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] Transform player;
     [SerializeField] Transform inventoryPosition;
+    [SerializeField] float releaseDistance = 1;
     private bool isEmpty = true;
     private Transform itemInInventory;
 
@@ -23,7 +24,7 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    public bool GetIsEmpty()
+    public bool IsEmpty()
     {
         return isEmpty;
     }
@@ -35,22 +36,66 @@ public class InventoryManager : MonoBehaviour
         if (!isEmpty) return;
 
         item.GetComponent<Collider>().enabled = false;
+        //item.transform.LookAt(transform.forward);
         item.parent = player;
         item.transform.position = inventoryPosition.position;
 
         itemInInventory = item;
+        itemInInventory.transform.rotation = player.rotation;
         isEmpty = false;
+    }
+    private void Update()
+    {
+        if (!IsEmpty() && Input.GetKeyDown(KeyCode.T))
+        {
+            itemInInventory.transform.rotation = player.rotation;
+            //itemInInventory.LookAt(Vector3.back);
+        }
     }
     public void RemoveItemFromInventory()
     {
-        itemInInventory.parent = null;
-        itemInInventory.GetComponent<Collider>().enabled = true;
-        itemInInventory = null;
-        isEmpty = true;
+        if (MouseWorld.Instance.GetObjectInFront(releaseDistance, out RaycastHit hit))
+        {
+            if (hit.normal == Vector3.up)
+            {
+                
+                ResetObject(hit);
+            }
+        }
+        else
+        {
+            RaycastHit groundHit;
+            groundHit = MouseWorld.Instance.GetObjectInDirection(player.position, Vector3.down);
+            ResetObject(groundHit);
+        }
     }
 
     public Transform GetItemInInventory()
     {
         return itemInInventory;
+    }
+    void ResetObject(RaycastHit hit)
+    {
+        var r = FindRenderer(itemInInventory);
+        if (r == null) return;
+
+        Vector3 dropPoint = new Vector3(hit.point.x, hit.point.y + r.localBounds.max.y, hit.point.z);
+        itemInInventory.position = dropPoint;
+        itemInInventory.rotation = Quaternion.identity;
+
+        itemInInventory.parent = null;
+        itemInInventory.GetComponent<Collider>().enabled = true;
+        isEmpty = true;
+        itemInInventory = null;
+    }
+    Renderer FindRenderer(Transform obj)
+    {
+        if(obj.TryGetComponent<Renderer>(out Renderer renderer))
+        {
+            return renderer;
+        }
+        renderer = obj.GetComponentInChildren<Renderer>();
+        if (renderer != null) return renderer;
+        return null;
     }
 }

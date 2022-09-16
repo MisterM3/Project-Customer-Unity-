@@ -29,7 +29,16 @@ public class MouseWorld : MonoBehaviour
         Ray ray = new Ray(_camera.transform.position,_camera.transform.forward);
         return ray;
     }
-
+    public bool GetObjectInFront(float distance, out RaycastHit hit)
+    {
+        return Physics.Raycast(RayAtScreenPosition(),out hit,distance);
+    }
+    public RaycastHit GetObjectInDirection(Vector3 origin,Vector3 direction)
+    {
+        RaycastHit hit;
+        Physics.Raycast(origin, direction,out hit);
+        return hit;
+    }
     public RaycastHit GetObjectInFront(float distance)
     {
         RaycastHit hit;

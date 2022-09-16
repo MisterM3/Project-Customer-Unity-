@@ -69,11 +69,6 @@ public class GeneralUI : MonoBehaviour
 
     void TurnOffPanels()
     {
-        /*for (int i = 0; i < transform.childCount; i++)
-        {
-            GameObject obj = transform.GetChild(i).gameObject;
-            obj.SetActive(false);
-        }*/
         navigationPanel.SetActive(false);
         optionsPanel.SetActive(false);
         controlsPanel.SetActive(false);

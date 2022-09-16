@@ -7130,6 +7130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 4965009421432699191}
   CharactersPerSecond: 20
+  timeToDissapear: 3
 --- !u!1 &6674464475527915001
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,9 +70,6 @@ public class CharacterInteraction : MonoBehaviour
             //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (frontHit.transform != null)
             {
-                //InteractableObject interactableObject = hit.transform.gameObject.GetComponent<InteractableObject>();
-                //FindObjectOfType<DialogueBox>().SetDialogue(interactableObject.GetTextToShow());
-
                 if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
                     Debug.Log("boom!");
@@ -88,7 +85,7 @@ public class CharacterInteraction : MonoBehaviour
                 Debug.LogError("No inventory in the scene!");
                 return;
             }
-            if (!InventoryManager.Instance.GetIsEmpty())
+            if (!InventoryManager.Instance.IsEmpty())
             {
                 InventoryManager.Instance.RemoveItemFromInventory();
                 return;
