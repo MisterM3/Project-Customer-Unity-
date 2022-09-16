@@ -21,11 +21,15 @@ public class GradualDyingPostProcessing : MonoBehaviour
     FilmGrain grain;
     ColorAdjustments colorAdjustments;
 
+    float startingBrightness;
+
     Vignette currentStageVignette;
     FilmGrain currentStageGrain;
     ColorAdjustments currentStageColorAdjustments;
 
     [SerializeField] VolumeProfile effectJustBeforeDying;
+
+    UserSettings settings;
 
     private int stage = 8;
     [SerializeField] private int totalStages = 8;
@@ -50,6 +54,8 @@ public class GradualDyingPostProcessing : MonoBehaviour
     //
     private void Update()
     {
+
+        UpdateBrightness();
         float timeForLerp = Time.deltaTime / 2.0f;
         if (vignette.intensity.value - intensityVignette < 0.1f) vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, intensityVignette, timeForLerp);
         if (grain.intensity.value - intensityGrain < 0.1f) grain.intensity.value = Mathf.Lerp(grain.intensity.value, intensityGrain, timeForLerp);
@@ -60,6 +66,9 @@ public class GradualDyingPostProcessing : MonoBehaviour
 
     private void Setup()
     {
+
+        settings = FindObjectOfType<UserSettings>();
+
         deathVolume.profile.TryGet<Vignette>(out vignette);
         deathVolume.profile.TryGet<FilmGrain>(out grain);
         deathVolume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
@@ -67,6 +76,8 @@ public class GradualDyingPostProcessing : MonoBehaviour
         effectJustBeforeDying.TryGet<Vignette>(out currentStageVignette);
         effectJustBeforeDying.TryGet<FilmGrain>(out currentStageGrain);
         effectJustBeforeDying.TryGet<ColorAdjustments>(out currentStageColorAdjustments);
+
+        startingBrightness = colorAdjustments.postExposure.value;
     }
     private void NewEffectsStage()
     {
@@ -81,6 +92,14 @@ public class GradualDyingPostProcessing : MonoBehaviour
     {
         stage++;
         NewEffectsStage();
+    }
+
+
+
+
+    public void UpdateBrightness()
+    {
+        colorAdjustments.postExposure.value = startingBrightness + settings.GetSetting(UserSettings.FloatSettings.brightness);
     }
 }
 
