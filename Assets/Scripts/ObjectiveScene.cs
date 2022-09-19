@@ -76,12 +76,18 @@ public class ObjectiveScene : MonoBehaviour
     private void NextObjective()
     {
         currentObjectiveNumber++;
+        MissionUI.Instance.NextMission();
         if (currentObjectiveNumber > objectivesList.Count)
         {
             Debug.LogError("Objectivenumber is above count");
             return;
         }
         if (currentObjectiveNumber == objectivesList.Count) MySceneManager.instance.NextScene();
+    }
+
+    public int GetCurrentObjective()
+    {
+        return currentObjectiveNumber;
     }
 
 }
