@@ -3959,5 +3959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lastWords
       objectReference: {fileID: 0}
+    - target: {fileID: 1113698834555358655, guid: c02d6d498af7af54baf6c0205aab2ba4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02d6d498af7af54baf6c0205aab2ba4, type: 3}
