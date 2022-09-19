@@ -28,8 +28,14 @@ public class CharacterInteraction : MonoBehaviour
     }
     private void LateUpdate()
     {
+
        if (frontHit.transform == null) return;
-        if (frontHit.transform.TryGetComponent(out OutlineObjects outline)) outline.ActivateOutline();
+
+        if (frontHit.transform.TryGetComponent(out OutlineObjects outline))
+        {
+            outline.ActivateOutline();
+            Debug.Log("help");
+        }
     }
     private void CheckPickedObjectPosition()
     {

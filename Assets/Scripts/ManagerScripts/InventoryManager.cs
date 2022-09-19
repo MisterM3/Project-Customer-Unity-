@@ -70,6 +70,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void DestroyItemFromInventory()
+    {
+        Destroy(itemInInventory.gameObject);
+        isEmpty = true;
+    }
+
     public Transform GetItemInInventory()
     {
         return itemInInventory;

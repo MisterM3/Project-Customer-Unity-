@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MissionUI : MonoBehaviour
 {
+    public static MissionUI Instance { get; private set; }
+
     [SerializeField] GameObject missionHint;
     [SerializeField] CanvasGroup missionCanvas;
     [SerializeField, Min(0)] float animationSpeed;
@@ -17,9 +19,23 @@ public class MissionUI : MonoBehaviour
     float timeLeft;
     bool isActive;
 
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("Can't be two MissionUI, Destroying" + gameObject);
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+    }
+
     void Start()
     {
         if (missions.Count != 0) missionsQueue = new Queue<string>(missions);
+        NextMission();
     }
 
     // Update is called once per frame
@@ -45,7 +61,7 @@ public class MissionUI : MonoBehaviour
         }
     }
 
-    void NextMission() => text.text = missionsQueue.Dequeue();
+    public void NextMission() => text.text = missionsQueue.Dequeue();
 
     IEnumerator Show()
     {
