@@ -1590,6 +1590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8331458445044336262}
   - component: {fileID: 8331458445044336263}
+  - component: {fileID: 5181999863203842725}
   m_Layer: 5
   m_Name: creditsContent
   m_TagString: Untagged
@@ -1631,7 +1632,7 @@ Animator:
   m_GameObject: {fileID: 8331458445044336257}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 35e3d54c68f110a41a80a42ba9157977, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4710a11f73b9c7945a419f1e64141d10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1641,6 +1642,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5181999863203842725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331458445044336257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a1dc999b873bc41a344d55242e3b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  execute: 0
+  toExecute:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8331458445228683376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,8 +2081,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000023536, y: 183.13}
-  m_SizeDelta: {x: 1066.7, y: 253.92}
+  m_AnchoredPosition: {x: 0.000023536, y: 207.73}
+  m_SizeDelta: {x: 1066.7, y: 341.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8331458445631239609
 CanvasRenderer:
