@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4587193241399426903}
   - component: {fileID: 6022232822958208381}
   - component: {fileID: 8626786114925065822}
+  - component: {fileID: 5450289913464989854}
+  - component: {fileID: 7374320092791374803}
   m_Layer: 0
   m_Name: beer
   m_TagString: Untagged
@@ -97,3 +99,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00077505584, y: 0.001805191, z: 0.0007371187}
   m_Center: {x: 0.0000000011496013, y: 0.00090259017, z: -0.000000001193257}
+--- !u!54 &5450289913464989854
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369658363828863055}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7374320092791374803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369658363828863055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86af9a7d35ab3e64ebe70694cbf7980a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 0

@@ -7,6 +7,7 @@ public class MySceneManager : MonoBehaviour
 {
     public static MySceneManager instance { get; private set; }
     // Start is called before the first frame update
+
     void Start()
     {
         if(instance != null && instance != this)
@@ -16,9 +17,11 @@ public class MySceneManager : MonoBehaviour
         else
         {
             instance = this;
+
         }
         DontDestroyOnLoad(this);
     }
+
     /// <summary>
     /// Call this method to change the scene
     /// </summary>
@@ -40,5 +43,21 @@ public class MySceneManager : MonoBehaviour
     public void NextScene()
     {
         ChangeScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void PlayGoodEnding()
+    {
+        ChangeScene(0);
+        StartCoroutine("FindAndPlayEnding",true);
+    }
+    IEnumerator FindAndPlayEnding(bool isGoodEnding)
+    {
+        EndingScript scr = null;
+        while(scr == null)
+        {
+            scr = FindObjectOfType<EndingScript>();
+            if (scr != null) break;
+            yield return 0;
+        }
+        if (isGoodEnding) scr.PlayGoodEnding();
     }
 }

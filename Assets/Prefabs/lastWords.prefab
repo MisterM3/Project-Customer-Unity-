@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 1113698834555358652}
   - component: {fileID: 1113698834555358653}
   - component: {fileID: 1113698834555358654}
+  - component: {fileID: 389635647149320669}
   m_Layer: 5
   m_Name: lastWords
   m_TagString: Untagged
@@ -796,6 +797,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &389635647149320669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113698834555358655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85adc7eb28f61ff4faddd0ccbc97de7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodEnding: {fileID: 2665798211155181862}
+  badEnding: {fileID: 1113698833548919599}
+  background: {fileID: 1113698834071644375}
 --- !u!1 &1302509288569552122
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4407769007586093030
 RectTransform:
   m_ObjectHideFlags: 0

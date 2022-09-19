@@ -13,6 +13,7 @@ public class CharacterInteraction : MonoBehaviour
     [SerializeField, Tooltip("Max distance to hold the object")] float releaseDistance;
     bool isHoldingObject;
     Pickable holdedObject;
+    [SerializeField] float holdDistance;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class CharacterInteraction : MonoBehaviour
     {
         if (holdedObject == null) return;
 
-        Vector3 desiredPos = cameraTransform.position + cameraTransform.forward * 2;
+        Vector3 desiredPos = cameraTransform.position + cameraTransform.forward * holdDistance;
         Vector3 distanceFromPlayer = desiredPos - holdedObject.transform.position;
 
         holdedObject.MoveToPos(desiredPos);
@@ -49,9 +50,7 @@ public class CharacterInteraction : MonoBehaviour
     }
     void CheckInteraction()
     {
-        frontHit = MouseWorld.Instance.GetObjectInFront(pickupDistance,objectLayer);
-        //if (frontHit.transform == null) return;
-        
+        frontHit = MouseWorld.Instance.GetObjectInFront(objectLayer);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -64,6 +63,8 @@ public class CharacterInteraction : MonoBehaviour
                 if (frontHit.transform == null) return;
                 if (IsPickable(frontHit.transform.gameObject, out Pickable pick))
                 {
+                    float dist = GetDistOnPlane(cameraTransform.position,pick.transform.position);
+                    if (dist > pickupDistance) return;
                     holdedObject = pick;
                     isHoldingObject = true;
                     Debug.Log("Picked up");
@@ -74,11 +75,10 @@ public class CharacterInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (frontHit.transform != null)
+            if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position,frontHit.transform.position) <= interactionDistance)
             {
                 if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
-                    Debug.Log("boom!");
                     func.Interact();
                 }
             }
@@ -125,4 +125,11 @@ public class CharacterInteraction : MonoBehaviour
         }
         return false;
     }
+    float GetDistOnPlane(Vector3 pos1, Vector3 pos2)
+    {
+        Vector2 point1 = new Vector2(pos1.x, pos1.z);
+        Vector2 point2 = new Vector2(pos2.x, pos2.z);
+        return Vector2.Distance(point1, point2);
+    }
+
 }
