@@ -61,7 +61,7 @@ public class GradualDyingPostProcessing : MonoBehaviour
         if (grain.intensity.value - intensityGrain < 0.1f) grain.intensity.value = Mathf.Lerp(grain.intensity.value, intensityGrain, timeForLerp);
         if (grain.response.value - responseGrain < 0.1f) grain.response.value = Mathf.Lerp(grain.response.value, responseGrain, timeForLerp);
         if (colorAdjustments.saturation.value - saturationColorAdjustments > 0.1f) colorAdjustments.saturation.value = Mathf.Lerp(colorAdjustments.saturation.value, saturationColorAdjustments, timeForLerp);
-        Debug.Log(colorAdjustments.saturation.value);
+       // Debug.Log(colorAdjustments.saturation.value);
     }
 
     private void Setup()
