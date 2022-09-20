@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5172159958984846882}
   - component: {fileID: 5172159958984846883}
   - component: {fileID: 5172159958984846887}
+  - component: {fileID: 2082794487441273339}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -188,6 +189,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8210f73a3fa03554fa421d8035cddfa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2082794487441273339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172159958984846908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions:
+  - obj: {fileID: 0}
+    act:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996097510621383457}
+          m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+          m_MethodName: SetDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "shit\u2026"
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5172159959651123265
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,23 +448,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.0019134493, z: 0.02195812}
   m_Center: {x: 0, y: -0.0065571116, z: -0.0062497794}
---- !u!114 &5172159958469213821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111507235983769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
-  outlineScaleFactor: -1.1
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  transformOfParent: 0
-  invert: 1
 --- !u!114 &5172159958469213820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +477,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 996097510621383457}
+          m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+          m_MethodName: SetDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: I bet these will also fit in the trunk
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5172159958469213821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111507235983769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
+  outlineScaleFactor: -1.1
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  transformOfParent: 0
+  invert: 1
 --- !u!1001 &5172159957760959023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,18 +624,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.009680552, y: 0.009999996, z: 0.011881243}
   m_Center: {x: -0.00015948714, y: -0.0000000030267984, z: 6.9849193e-10}
---- !u!114 &5172159958146742697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068503026848198477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5172159958146742696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +653,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5172159958146742697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068503026848198477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5172159958146742703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +816,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   releaseDistance: 5
+  holdDistance: 0
 --- !u!4 &4703758512803461679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468426477290491856, guid: c49d3e7ce7559cb4fa32b686d67d6ef0,
@@ -920,18 +963,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3269475, y: 1.6359508, z: 0.3225674}
   m_Center: {x: 0, y: 1.7347238e-17, z: 0.0019333793}
---- !u!114 &5172159958647781349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111507668354452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5172159958647781348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +976,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 0
+--- !u!114 &5172159958647781349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111507668354452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5172159958647781354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111507668354452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
+  outlineScaleFactor: -1.1
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  transformOfParent: 0
+  invert: 0
 --- !u!114 &5172159958647781355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,23 +1034,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5172159958647781354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111507668354452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
-  outlineScaleFactor: -1.1
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  transformOfParent: 0
-  invert: 0
 --- !u!1001 &5172159958293366471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1131,31 +1174,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3269475, y: 1.6359508, z: 0.3225674}
   m_Center: {x: 0, y: 1.7347238e-17, z: 0.0019333793}
---- !u!114 &5172159957870178570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111506878069654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5172159957870178569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111506878069654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86af9a7d35ab3e64ebe70694cbf7980a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
 --- !u!114 &5172159957870178568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,6 +1203,43 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 996097510621383457}
+          m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+          m_MethodName: SetDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "fuck\u2026."
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5172159957870178569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111506878069654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86af9a7d35ab3e64ebe70694cbf7980a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 0
+--- !u!114 &5172159957870178570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111506878069654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5172159957870178575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,19 +1392,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &5172159958141815714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111506439883925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be611f2db413f8542abb6e4814c11104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 5172159958141815742}
 --- !u!114 &5172159958141815713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,6 +1457,47 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 996097510621383457}
+          m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+          m_MethodName: SetDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Alright, is there a phone in here?
+            m_BoolArgument: 1
+          m_CallState: 2
+  - obj: {fileID: 0}
+    act:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996097510621383457}
+          m_TargetAssemblyTypeName: DialogueBox, Assembly-CSharp
+          m_MethodName: SetDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "it won\u2019t open, there have to be some keys around"
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &5172159958141815714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111506439883925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be611f2db413f8542abb6e4814c11104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 5172159958141815742}
 --- !u!114 &5172159958141815719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,6 +1665,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1982290840224906930, guid: e470f10bc72f4c745b7a8b042f03cb93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e470f10bc72f4c745b7a8b042f03cb93, type: 3}
+--- !u!114 &996097510621383457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5338434053965122799, guid: e470f10bc72f4c745b7a8b042f03cb93,
+    type: 3}
+  m_PrefabInstance: {fileID: 5172159959328982990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f14aec92cd379c4eaeed22627373cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2771107470438307709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7040190113470845107, guid: e470f10bc72f4c745b7a8b042f03cb93,
@@ -1783,7 +1878,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3269475, y: 1.6359508, z: 0.3225674}
   m_Center: {x: 0, y: 1.7347238e-17, z: 0.0019333793}
---- !u!114 &5172159958328067309
+--- !u!114 &5172159958328067217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1792,14 +1887,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5406111505715525751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
+  m_Script: {fileID: 11500000, guid: 86af9a7d35ab3e64ebe70694cbf7980a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
-  outlineScaleFactor: -1.1
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  transformOfParent: 0
-  invert: 0
+  weight: 0
 --- !u!114 &5172159958328067218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,19 +1920,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5172159958328067217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406111505715525751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86af9a7d35ab3e64ebe70694cbf7980a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
 --- !u!114 &5172159958328067222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,6 +1932,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cdd3ea39738bf4ba16b8aeed7eee8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5172159958328067309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406111505715525751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e73cada24b2b524ea47943d8794334c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: e2a6a8407c49b284693e4b42f6f1090f, type: 2}
+  outlineScaleFactor: -1.1
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  transformOfParent: 0
+  invert: 0
 --- !u!1001 &5172159959665228286
 PrefabInstance:
   m_ObjectHideFlags: 0
