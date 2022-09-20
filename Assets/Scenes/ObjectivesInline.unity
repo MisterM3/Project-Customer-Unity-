@@ -581,6 +581,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camPosition: {fileID: 1605471361}
+--- !u!114 &2001410985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 996097510621383457, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5172159957953416531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f14aec92cd379c4eaeed22627373cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5172159957953416531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -642,6 +654,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2001410985}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueBox, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: "fuck\u2026."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172159958328067218, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
+        type: 3}
+      propertyPath: Interactions.Array.data[0].act.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8125885392388755567, guid: d21a70cfee4fb1e4aaad7e618f571ed3,
         type: 3}
