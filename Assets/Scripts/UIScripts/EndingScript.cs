@@ -8,11 +8,12 @@ public class EndingScript : MonoBehaviour
     [SerializeField] GameObject badEnding;
     [SerializeField] GameObject background;
     Animator currentAnimator;
-    bool isAnimationDone;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bool isEndingGood = FindObjectOfType<UserSettings>().GetSetting(UserSettings.BoolSettings.IsEndingGood);
+        if (isEndingGood) PlayGoodEnding();
+        else PlayBadEnding();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class EndingScript : MonoBehaviour
             badEnding.SetActive(false);
             background.SetActive(false);
             currentAnimator = null;
+            FindObjectOfType<MySceneManager>().ChangeScene(0);
         }
        if(Input.GetKeyDown(KeyCode.B)) PlayBadEnding();
        if(Input.GetKeyDown(KeyCode.G)) PlayGoodEnding();

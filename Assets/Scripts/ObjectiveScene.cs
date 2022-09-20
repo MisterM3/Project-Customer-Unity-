@@ -36,7 +36,7 @@ public class ObjectiveScene : MonoBehaviour
         {
             if (objective.triggerCollider != null)
             {
-          //      if (objective.triggerCollider == 
+          //if (objective.triggerCollider == 
             }
         }
     }
@@ -85,7 +85,7 @@ public class ObjectiveScene : MonoBehaviour
         if (currentObjectiveNumber == objectivesList.Count)
         {
             Debug.Log("next scene");
-            MySceneManager.instance.NextScene();
+            //MySceneManager.instance.NextScene();
 
         }
     }

@@ -5,21 +5,12 @@ using UnityEngine;
 
 public class MySceneManager : MonoBehaviour
 {
-    public static MySceneManager instance { get; private set; }
+    //public static MySceneManager instance { get; private set; }
     // Start is called before the first frame update
 
     void Start()
     {
-        if(instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            instance = this;
-
-        }
-        DontDestroyOnLoad(this);
+        if (SceneManager.GetActiveScene().buildIndex == 0) Cursor.lockState = CursorLockMode.None;
     }
 
     /// <summary>
@@ -28,7 +19,7 @@ public class MySceneManager : MonoBehaviour
     /// <param name="sceneNumber">Scene number you want to change to</param>
     public void ChangeScene(int sceneNumber)
     {
-        if(sceneNumber > SceneManager.sceneCount)
+        if (sceneNumber > SceneManager.sceneCountInBuildSettings)
         {
             Debug.LogError("Invalid scene number");
             return;
@@ -46,18 +37,12 @@ public class MySceneManager : MonoBehaviour
     }
     public void PlayGoodEnding()
     {
-        ChangeScene(0);
-        StartCoroutine("FindAndPlayEnding",true);
+        FindObjectOfType<UserSettings>().UpdateSetting(true, UserSettings.BoolSettings.IsEndingGood);
+        ChangeScene(4);
     }
-    IEnumerator FindAndPlayEnding(bool isGoodEnding)
+    public void PlayBadEnding()
     {
-        EndingScript scr = null;
-        while(scr == null)
-        {
-            scr = FindObjectOfType<EndingScript>();
-            if (scr != null) break;
-            yield return 0;
-        }
-        if (isGoodEnding) scr.PlayGoodEnding();
+        FindObjectOfType<UserSettings>().UpdateSetting(false, UserSettings.BoolSettings.IsEndingGood);
+        ChangeScene(4);
     }
 }
