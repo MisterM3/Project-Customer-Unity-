@@ -8,6 +8,6 @@ public class ObjectiveTriggers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("AAAAAAAAAAAAAAA");
-        ObjectiveScene.Instance.IsTriggerTheObjective(other);
+        ObjectiveScene.Instance.IsTriggerTheObjective(this.GetComponent<Collider>());
     }
 }

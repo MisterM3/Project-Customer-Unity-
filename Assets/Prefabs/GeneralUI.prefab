@@ -3488,6 +3488,7 @@ MonoBehaviour:
   optionsPanel: {fileID: 3733490022668740643}
   controlsPanel: {fileID: 3733490024213513569}
   ActiveUIPanel: {fileID: 7685440808563252536}
+  hideCursor: 1
 --- !u!1 &3733490023505451873
 GameObject:
   m_ObjectHideFlags: 0

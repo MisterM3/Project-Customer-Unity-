@@ -6,10 +6,11 @@ public class UserSettings : MonoBehaviour
 {
     static UserSettings userSettings;
     public enum FloatSettings { sound = 0, brightness = 1, sensetivity = 2 };
-    public enum BoolSettings { FullScreen, Cursor };
+    public enum BoolSettings { FullScreen, Cursor, IsEndingGood };
 
     float sound = .3f, brightness = .2f, sensetivity = .5f;
     bool fullScreen = true, cursor = true;
+    bool isGoodEnding;
 
     Dictionary<FloatSettings, float> floatSettingsValues;
     Dictionary<BoolSettings, bool> boolSettingsValues;
@@ -42,6 +43,7 @@ public class UserSettings : MonoBehaviour
         boolSettingsValues = new Dictionary<BoolSettings, bool>();
         boolSettingsValues.Add(BoolSettings.FullScreen, fullScreen);
         boolSettingsValues.Add(BoolSettings.Cursor, cursor);
+        boolSettingsValues.Add(BoolSettings.IsEndingGood, isGoodEnding);
 
     }
 

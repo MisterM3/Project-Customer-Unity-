@@ -36,7 +36,7 @@ public class ObjectiveScene : MonoBehaviour
         {
             if (objective.triggerCollider != null)
             {
-          //      if (objective.triggerCollider == 
+          //if (objective.triggerCollider == 
             }
         }
     }
@@ -76,12 +76,23 @@ public class ObjectiveScene : MonoBehaviour
     private void NextObjective()
     {
         currentObjectiveNumber++;
+        MissionUI.Instance.NextMission();
         if (currentObjectiveNumber > objectivesList.Count)
         {
             Debug.LogError("Objectivenumber is above count");
             return;
         }
-        if (currentObjectiveNumber == objectivesList.Count) MySceneManager.instance.NextScene();
+        if (currentObjectiveNumber == objectivesList.Count)
+        {
+            Debug.Log("next scene");
+            //MySceneManager.instance.NextScene();
+
+        }
+    }
+
+    public int GetCurrentObjective()
+    {
+        return currentObjectiveNumber;
     }
 
 }

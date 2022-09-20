@@ -6,11 +6,15 @@ public class GeneralUI : MonoBehaviour
 {
     bool isPaused;
     public enum Panels { Navigation = 0, Options = 1, Controls = 2 };
+    [Header("Panels")]
     [SerializeField] GameObject darkBackground;
     [SerializeField] GameObject navigationPanel;
     [SerializeField] GameObject optionsPanel;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject ActiveUIPanel;
+
+    [Header("Properties")]
+    [SerializeField] bool hideCursor = true;
     Dictionary<Panels, GameObject> panels = new Dictionary<Panels, GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -28,12 +32,7 @@ public class GeneralUI : MonoBehaviour
         {
             if (!isPaused)
             {
-                Time.timeScale = 0f;
-                darkBackground.SetActive(true);
-                navigationPanel.SetActive(true);
-                ActiveUIPanel.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                isPaused = true;
+                Pause();
             }
             else
             {
@@ -48,8 +47,17 @@ public class GeneralUI : MonoBehaviour
         darkBackground.SetActive(false);
         TurnOffPanels();
         ActiveUIPanel.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = hideCursor ? CursorLockMode.Locked : CursorLockMode.None;
         isPaused = false;
+    }
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        darkBackground.SetActive(true);
+        navigationPanel.SetActive(true);
+        ActiveUIPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        isPaused = true;
     }
     public void Quit()
     {
@@ -72,5 +80,9 @@ public class GeneralUI : MonoBehaviour
         navigationPanel.SetActive(false);
         optionsPanel.SetActive(false);
         controlsPanel.SetActive(false);
+    }
+    public void TurnBackground(bool state)
+    {
+        darkBackground.SetActive(state);
     }
 }
