@@ -24,6 +24,6 @@ public class FadeToLevel : MonoBehaviour
 
     public void OnAnimationComplete()
     {
-        MySceneManager.instance.ChangeScene(loadlevel);
+        //MySceneManager.instance.ChangeScene(loadlevel);
     }
 }
