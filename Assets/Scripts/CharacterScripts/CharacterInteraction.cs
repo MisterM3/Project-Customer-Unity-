@@ -67,7 +67,7 @@ public class CharacterInteraction : MonoBehaviour
                     if (dist > pickupDistance) return;
                     holdedObject = pick;
                     isHoldingObject = true;
-                    Debug.Log("Picked up");
+                    pick.PickedUp();
                 }
             }
 
