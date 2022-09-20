@@ -6435,8 +6435,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.006115875, y: 0.012379321, z: 0.0031491313}
-  m_Center: {x: 5.820766e-10, y: 0.0061896597, z: 0.0000000018044375}
+  m_Size: {x: 0.006115884, y: 0.012222338, z: 0.003149137}
+  m_Center: {x: 4.768372e-10, y: 0.006111168, z: 0.0000000017881394}
 --- !u!1001 &933150920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6970,7 +6970,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 11.18
-  MaxDistance: 60.9
+  MaxDistance: 77.87
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -8745,7 +8745,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: be20d72dd753f0244ac5d6df5536a714, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.786
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
