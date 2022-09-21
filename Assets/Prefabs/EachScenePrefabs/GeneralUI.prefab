@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8941957512005189020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 2100072924409246615}
   CharactersPerSecond: 20
+  timeToDissapear: 0
 --- !u!1 &626243303772576116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,6 +5636,8 @@ MonoBehaviour:
   navigationPanel: {fileID: 626243304108151311}
   optionsPanel: {fileID: 626243304985162517}
   controlsPanel: {fileID: 626243304514641495}
+  ActiveUIPanel: {fileID: 0}
+  hideCursor: 1
 --- !u!1 &626243305804703424
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,7 +7084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8566200281649773480
 RectTransform:
   m_ObjectHideFlags: 0
