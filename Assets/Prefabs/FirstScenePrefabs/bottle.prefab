@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5558272374822564287}
   - component: {fileID: 4946760390174658038}
   - component: {fileID: 3200916012095096847}
+  - component: {fileID: 6174333807713352510}
   m_Layer: 6
   m_Name: bottle
   m_TagString: Untagged
@@ -118,7 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   velocityTreshold: 8
-  showGUI: 0
 --- !u!136 &5558272374822564287
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -246,3 +246,19 @@ MonoBehaviour:
     sounds:
     - name: drop
       clip: {fileID: 8300000, guid: 4a44d17ce0f6a564a8e01988a72c0d53, type: 3}
+--- !u!114 &6174333807713352510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418386540701428108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: Looks like empty beer bottle

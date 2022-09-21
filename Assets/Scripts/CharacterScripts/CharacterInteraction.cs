@@ -74,11 +74,14 @@ public class CharacterInteraction : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
+            print(frontHit.transform.gameObject.name);
             //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position,frontHit.transform.position) <= interactionDistance)
+            if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position,frontHit.point) <= interactionDistance)
             {
+                print("before find funcexec");
                 if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
+                    print("found funcexec");
                     func.Interact();
                 }
             }

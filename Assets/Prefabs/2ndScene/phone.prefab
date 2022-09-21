@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9120035603793540861}
   - component: {fileID: 7874945028969101989}
   - component: {fileID: 7779227372938035499}
+  - component: {fileID: 3715942539850573060}
   m_Layer: 0
   m_Name: phone
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3715942539850573060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630870236361688519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0011420422, y: 0.000053232463, z: 0.0005615729}
+  m_Center: {x: -4.0745363e-10, y: 8.276402e-11, z: 5.820766e-11}

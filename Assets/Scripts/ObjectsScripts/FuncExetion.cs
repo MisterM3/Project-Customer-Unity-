@@ -7,9 +7,11 @@ using UnityEngine.Events;
 public class FuncExetion : MonoBehaviour
 {
     public List<WrappedFunc> Interactions;
+    [SerializeField] List<SetDialogue> prebuild;
     void Start()
     {
-        if (Interactions == null || Interactions.Count == 0)
+        if ((Interactions == null || Interactions.Count == 0) &&
+            (prebuild == null || prebuild.Count == 0))
         {
             Debug.LogError("No interactions assigned");
             return;
@@ -21,6 +23,37 @@ public class FuncExetion : MonoBehaviour
         foreach(WrappedFunc func in Interactions)
         {
             func.Interacted();
+        }
+        if(prebuild != null && prebuild.Count > 0)
+        {
+            foreach (SetDialogue dialogue in prebuild)
+            {
+                dialogue.Interacted();
+            }
+        }
+    }
+}
+[Serializable]
+public class SetDialogue
+{
+    public GameObject obj;
+    public string text;
+    public void Interacted()
+    {
+        if(obj == null)
+        {
+            GameObject.FindObjectOfType<DialogueBox>().SetDialogue(text);
+            return;
+        }
+        InventoryManager invMan = GameObject.FindObjectOfType<InventoryManager>();
+        if (invMan == null)
+        {
+            Debug.LogError("No inventory manager found!");
+            return;
+        }
+        if (!invMan.IsEmpty() && invMan.GetItemInInventory().gameObject == obj)
+        {
+            GameObject.FindObjectOfType<DialogueBox>().SetDialogue(text);
         }
     }
 }
