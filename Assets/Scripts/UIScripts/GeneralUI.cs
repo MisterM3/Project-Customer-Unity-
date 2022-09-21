@@ -47,7 +47,8 @@ public class GeneralUI : MonoBehaviour
         darkBackground.SetActive(false);
         TurnOffPanels();
         ActiveUIPanel.SetActive(true);
-        Cursor.lockState = hideCursor ? CursorLockMode.Locked : CursorLockMode.None;
+        //   Cursor.lockState = hideCursor ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
     }
     public void Pause()
