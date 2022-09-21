@@ -43,9 +43,12 @@ public class CharactController : MonoBehaviour
 
     void GetInput()
     {
-        yInput = Input.GetAxisRaw("Vertical");
-        xInput = Input.GetAxisRaw("Horizontal");
-        if (xInput != 0 || yInput != 0) walkingSound.PlaySound();
+        if (!isInCar)
+        {
+            yInput = Input.GetAxisRaw("Vertical");
+            xInput = Input.GetAxisRaw("Horizontal");
+            if (xInput != 0 || yInput != 0) walkingSound.PlaySound();
+        }
         
 
         xRotation += Input.GetAxisRaw("Mouse X") * (settings.GetSetting(UserSettings.FloatSettings.sensetivity) + .5f) * Time.timeScale;

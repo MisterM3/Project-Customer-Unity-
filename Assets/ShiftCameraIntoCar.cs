@@ -10,6 +10,7 @@ public class ShiftCameraIntoCar : MonoBehaviour
     [SerializeField] private AnimationCurve xPosition;
     [SerializeField] private CharactController controller;
     private bool Active = false;
+    private bool inCar = false;
     float timer = 0;
 
     Vector3 moveTo;
@@ -37,6 +38,7 @@ public class ShiftCameraIntoCar : MonoBehaviour
     public void HopInCar()
     {
         Active = true;
+        inCar = true;
         controller.SetIsInCar(true);
         player.TryGetComponent<Rigidbody>(out Rigidbody rb);
         rb.useGravity = false;
@@ -48,8 +50,9 @@ public class ShiftCameraIntoCar : MonoBehaviour
 
     public void HopOutCar()
     {
+        if (!inCar) return;
+        inCar = false;
         Active = true;
-        controller.SetIsInCar(false);
         moveFrom = cameraInCar.position;
         moveTo = cameraOutsideCar.position;
     }
@@ -73,8 +76,9 @@ public class ShiftCameraIntoCar : MonoBehaviour
         {
             Active = false;
             timer = 0;
-            if (!controller.IsInCar())
+            if (!inCar)
             {
+                controller.SetIsInCar(false);
                 player.TryGetComponent<Rigidbody>(out Rigidbody rb);
                 rb.useGravity = true;
                 player.TryGetComponent<Collider>(out Collider col);
