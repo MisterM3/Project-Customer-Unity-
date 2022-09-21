@@ -33,6 +33,12 @@ public class MouseWorld : MonoBehaviour
     {
         return Physics.Raycast(RayAtScreenPosition(),out hit,distance);
     }
+    public RaycastHit GetObjectInDirection(Vector3 origin,Vector3 direction, LayerMask layer)
+    {
+        RaycastHit hit;
+        Physics.Raycast(origin, direction, out hit,layer);
+        return hit;
+    }
     public RaycastHit GetObjectInDirection(Vector3 origin,Vector3 direction)
     {
         RaycastHit hit;
