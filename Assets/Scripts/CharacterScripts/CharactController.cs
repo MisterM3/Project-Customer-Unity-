@@ -15,6 +15,8 @@ public class CharactController : MonoBehaviour
 
     AudioManager walkingSound;
 
+    bool isInCar = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class CharactController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (isInCar) return;
         Vector3 velocity = (transform.forward * yInput) + (transform.right * xInput);
         velocity = speed * Time.deltaTime * velocity.normalized;
         rb.velocity = velocity + new Vector3(0, rb.velocity.y, 0);
@@ -50,5 +53,15 @@ public class CharactController : MonoBehaviour
     void PlaySounds()
     {
         if (rb.velocity.magnitude > 1) walkingSound.PlaySound("concrete");
+    }
+
+    public void SetIsInCar(bool inCar)
+    {
+        isInCar = inCar;
+    }
+
+    public bool IsInCar()
+    {
+        return isInCar;
     }
 }
