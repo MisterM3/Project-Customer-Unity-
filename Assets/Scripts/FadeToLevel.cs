@@ -8,10 +8,37 @@ public class FadeToLevel : MonoBehaviour
 
     private Action onAnimationComplete;
 
-
-    public void FadeOutToLevel(Action finishAnim)
+    [SerializeField] MySceneManager sceneManger;
+    private void Start()
     {
-        onAnimationComplete = finishAnim;
+       // TryGetComponent<MySceneManager>(out MySceneManager sceneManger);
+        //Debug.Log(sceneManger);
+    }
+
+    public void SetAction(Action action)
+    {
+        Debug.Log("help");
+    }
+
+    public void FadeToGoodEnding()
+    {
+        onAnimationComplete = sceneManger.PlayGoodEnding;
+        animator.SetTrigger("FadeOut");
+    }
+    public void FadeToBadEnding()
+    {
+        onAnimationComplete = sceneManger.PlayBadEnding;
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void FadeOutToNextLevel()
+    {
+        onAnimationComplete = sceneManger.NextScene;
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void FadeOut()
+    {
         animator.SetTrigger("FadeOut");
     }
 
