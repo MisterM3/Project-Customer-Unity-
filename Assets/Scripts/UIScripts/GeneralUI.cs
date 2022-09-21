@@ -5,6 +5,7 @@ using UnityEngine;
 public class GeneralUI : MonoBehaviour
 {
     bool isPaused;
+    [SerializeField] bool startScreen = false;
     public enum Panels { Navigation = 0, Options = 1, Controls = 2 };
     [Header("Panels")]
     [SerializeField] GameObject darkBackground;
@@ -28,6 +29,7 @@ public class GeneralUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (startScreen) return;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
@@ -48,8 +50,9 @@ public class GeneralUI : MonoBehaviour
         TurnOffPanels();
         ActiveUIPanel.SetActive(true);
         //   Cursor.lockState = hideCursor ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
+        if (startScreen) return;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void Pause()
     {
