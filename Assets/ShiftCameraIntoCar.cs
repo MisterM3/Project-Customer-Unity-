@@ -10,7 +10,7 @@ public class ShiftCameraIntoCar : MonoBehaviour
     [SerializeField] private AnimationCurve xPosition;
     [SerializeField] private CharactController controller;
     private bool Active = false;
-    private bool inCar = false;
+    private bool inCar = true;
     float timer = 0;
 
     Vector3 moveTo;
@@ -20,7 +20,12 @@ public class ShiftCameraIntoCar : MonoBehaviour
     void Start()
     {
         controller = FindObjectOfType<CharactController>();
-      //  player.transform.position = cameraOutsideCar.position; 
+        player.transform.position = cameraInCar.position;
+        controller.SetIsInCar(true);
+        player.TryGetComponent<Rigidbody>(out Rigidbody rb);
+        rb.useGravity = false;
+        player.TryGetComponent<Collider>(out Collider col);
+        col.enabled = false;
     }
 
     // Update is called once per frame
