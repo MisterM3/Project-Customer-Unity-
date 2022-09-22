@@ -9,6 +9,7 @@ public class ObjectiveScene : MonoBehaviour
     [SerializeField] private List<Objective> objectivesList;
     [SerializeField] private int currentObjectiveNumber = 0;
 
+    [SerializeField] private GradualDyingPostProcessing dyingEffect;
     private void Awake()
     {
         if (Instance != null)
@@ -77,6 +78,7 @@ public class ObjectiveScene : MonoBehaviour
     {
         currentObjectiveNumber++;
         MissionUI.Instance.NextMission();
+        if (dyingEffect != null) dyingEffect.nextStage();
         if (currentObjectiveNumber > objectivesList.Count)
         {
             Debug.LogError("Objectivenumber is above count");
