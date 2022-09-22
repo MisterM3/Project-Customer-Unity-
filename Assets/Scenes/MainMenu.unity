@@ -1627,6 +1627,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1053892864}
+    - target: {fileID: 5405012370966736305, guid: 8cfd9c1156a6b174bb4d58a6cad1a876,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 788a49961a663bc48b1803813b496f7c,
+        type: 3}
     - target: {fileID: 5405012371614046694, guid: 8cfd9c1156a6b174bb4d58a6cad1a876,
         type: 3}
       propertyPath: m_Name
@@ -8720,4 +8726,6 @@ MonoBehaviour:
   controlsPanel: {fileID: 3733490023819770426}
   ActiveUIPanel: {fileID: 7685440807666442851}
   instructions: {fileID: 0}
+  handCursor: {fileID: 0}
+  dotCursor: {fileID: 0}
   hideCursor: 0
