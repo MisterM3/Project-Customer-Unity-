@@ -135,16 +135,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 728868540702150833, guid: 43308c436fc05994296949a8e43a6a69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 929887280611574016, guid: 43308c436fc05994296949a8e43a6a69,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2808888015627902809, guid: 43308c436fc05994296949a8e43a6a69,
         type: 3}
       propertyPath: nextScene
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4373372193937156261, guid: 43308c436fc05994296949a8e43a6a69,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373372193937156261, guid: 43308c436fc05994296949a8e43a6a69,
+        type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 874109206}
     - target: {fileID: 6941103872979450923, guid: 43308c436fc05994296949a8e43a6a69,
         type: 3}
       propertyPath: m_RootOrder
@@ -388,8 +403,8 @@ Canvas:
   m_GameObject: {fileID: 1171368433}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 874109206}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -398,7 +413,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1171368437
 RectTransform:
