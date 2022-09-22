@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HousePartyScene.unity
     guid: 8734817c116f19f439223ac0c4853ab6
-  - enabled: 0
-    path: Assets/Scenes/IntroScene.unity
-    guid: c031bccd6d5496a41903d9157b11f831
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: 647dda0a876657147bc95aef8f1c7211
