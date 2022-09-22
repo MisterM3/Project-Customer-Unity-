@@ -23,13 +23,6 @@ public class ColourChange : MonoBehaviour
     }
     Color CreateColour()
     {
-        //int[] rgb = new int[3];
-        //rgb[0] = 
-        Color colour = Random.ColorHSV(0, 360, 99, 100, 99, 100);
-        //colour = Color.HSVToRGB(Random.Range(0, 360), 100, 100,true);
-        //return Color.HSVToRGB(Random.Range(0f,360f),100f,100f);
-        colour = Random.ColorHSV(0,1,1,1,1,1);
-        return colour;
-        //Color colour = Color.HSVToRGB(Random.Range(0,360),99,99,true);
+        return Random.ColorHSV(0, 1, 1, 1, 1, 1);
     }
 }
