@@ -81,7 +81,7 @@ public class CharacterInteraction : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            print(frontHit.transform.gameObject.name);
+            if (Time.timeScale == 0) return;
             //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position,frontHit.point) <= interactionDistance)
             {
@@ -108,11 +108,10 @@ public class CharacterInteraction : MonoBehaviour
             }
 
             //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (frontHit.transform != null)
+            if (frontHit.transform.TryGetComponent<InteractableObject>(out InteractableObject intObj))
             {
-                Debug.Log("char");
-                InteractableObject interactableObject = frontHit.transform.gameObject.GetComponent<InteractableObject>();
-                interactableObject.PickUp();
+                //InteractableObject interactableObject = frontHit.transform.gameObject.GetComponent<InteractableObject>();
+                intObj.PickUp();
 
             }
 
