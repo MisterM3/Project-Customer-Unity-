@@ -296,7 +296,7 @@ MonoBehaviour:
     audioSource: {fileID: 7330727571685777711}
     sounds:
     - name: concrete
-      clip: {fileID: 8300000, guid: 64f13c3eedead534d952bbcbf085aa1a, type: 3}
+      clip: {fileID: 8300000, guid: e89235177669a784e9b46d8d13123bd3, type: 3}
 --- !u!1 &7811345451217130861
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class CharactController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        xRotation = 90;
         walkingSound = GetComponent<AudioManager>();
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
