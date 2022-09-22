@@ -189,6 +189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394441598}
     m_Modifications:
+    - target: {fileID: 6174333807713352510, guid: 4110b95a7f0f6504f91b8f271cd24cab,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: Looks like an empty beer bottle.
+      objectReference: {fileID: 0}
     - target: {fileID: 7418386540701428108, guid: 4110b95a7f0f6504f91b8f271cd24cab,
         type: 3}
       propertyPath: m_Name
@@ -485,6 +490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
@@ -6433,6 +6443,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 544567860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &544567862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515151392444825337, guid: 2e99e65ede91ff643ab51fc2b4404cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 544567860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &544567863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544567862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1001 &574412615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6508,6 +6540,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 574412615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &574412617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4449545435707746692, guid: b3be70faabdb70c45bdb3893b96d5532,
+    type: 3}
+  m_PrefabInstance: {fileID: 574412615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &574412618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574412617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!4 &585846788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4183652375038246064, guid: 42b2dd84f3e74a2478f68886247a2f8c,
@@ -6719,6 +6773,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 607725621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &607725623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515151392444825337, guid: 2e99e65ede91ff643ab51fc2b4404cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 607725621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &607725624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607725623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1 &640103691
 GameObject:
   m_ObjectHideFlags: 0
@@ -7757,6 +7833,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
 --- !u!4 &933150921 stripped
@@ -8202,6 +8283,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394441598}
     m_Modifications:
+    - target: {fileID: 6174333807713352510, guid: 4110b95a7f0f6504f91b8f271cd24cab,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: Looks like an empty beer bottle.
+      objectReference: {fileID: 0}
     - target: {fileID: 7418386540701428108, guid: 4110b95a7f0f6504f91b8f271cd24cab,
         type: 3}
       propertyPath: m_Name
@@ -8360,6 +8446,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1047513635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1047513637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515151392444825337, guid: 2e99e65ede91ff643ab51fc2b4404cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1047513635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1047513638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047513637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1 &1053277333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8513,6 +8621,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394441598}
     m_Modifications:
+    - target: {fileID: 6174333807713352510, guid: 4110b95a7f0f6504f91b8f271cd24cab,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: Looks like an empty beer bottle.
+      objectReference: {fileID: 0}
     - target: {fileID: 7418386540701428108, guid: 4110b95a7f0f6504f91b8f271cd24cab,
         type: 3}
       propertyPath: m_Name
@@ -8647,6 +8760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
@@ -8974,6 +9092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174333807713352510, guid: 4110b95a7f0f6504f91b8f271cd24cab,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: Looks like an empty beer bottle.
       objectReference: {fileID: 0}
     - target: {fileID: 7418386540701428108, guid: 4110b95a7f0f6504f91b8f271cd24cab,
         type: 3}
@@ -9332,6 +9455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: beer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
@@ -10107,6 +10235,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1325029381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325029383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7967321823816561037, guid: 97eae643d1e91974abedc729f8ef8b9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1325029381}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1325029384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325029383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: This beer can  is empty.
 --- !u!1 &1327765520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1372540970315614564, guid: f4489718827a64641a60e1530a2510ca,
@@ -10431,6 +10581,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1461512207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1461512209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7967321823816561037, guid: 97eae643d1e91974abedc729f8ef8b9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461512207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1461512210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461512209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: This beer can  is empty.
 --- !u!1001 &1462184367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11076,6 +11248,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1616319838}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1616319840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515151392444825337, guid: 2e99e65ede91ff643ab51fc2b4404cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1616319838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1616319841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616319840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1001 &1630082707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12264,6 +12458,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
 --- !u!4 &1995030662 stripped
@@ -12362,6 +12561,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2018076999}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2018077001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4515151392444825337, guid: 2e99e65ede91ff643ab51fc2b4404cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 2018076999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018077002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018077001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1001 &2026923413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12437,6 +12658,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2026923413}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2026923415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4449545435707746692, guid: b3be70faabdb70c45bdb3893b96d5532,
+    type: 3}
+  m_PrefabInstance: {fileID: 2026923413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2026923416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026923415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: So much trash....
 --- !u!1001 &2056793768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12910,6 +13153,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 394441598}
     m_Modifications:
+    - target: {fileID: 6174333807713352510, guid: 4110b95a7f0f6504f91b8f271cd24cab,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: Looks like an empty beer bottle.
+      objectReference: {fileID: 0}
     - target: {fileID: 7418386540701428108, guid: 4110b95a7f0f6504f91b8f271cd24cab,
         type: 3}
       propertyPath: m_Name
@@ -13056,6 +13304,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95b71e0f107e8b6419bd79e9bd1ffce9, type: 3}
+--- !u!1 &1343275607213884287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6577878020028476224, guid: 95b71e0f107e8b6419bd79e9bd1ffce9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1343275607213884286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1343275607213884288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343275607213884287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: Nice bong!
 --- !u!1001 &1372540970233395698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13784,6 +14054,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer
       objectReference: {fileID: 0}
+    - target: {fileID: 8656148367947025210, guid: bf58e2501e0b75741ab2e2c9fc37d482,
+        type: 3}
+      propertyPath: prebuild.Array.data[0].text
+      value: This beer can  is empty.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf58e2501e0b75741ab2e2c9fc37d482, type: 3}
 --- !u!1001 &8901790565653182872
@@ -13855,3 +14130,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97eae643d1e91974abedc729f8ef8b9f, type: 3}
+--- !u!1 &8901790565653182873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7967321823816561037, guid: 97eae643d1e91974abedc729f8ef8b9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8901790565653182872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8901790565653182874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901790565653182873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273bb59df65d2d147a12ac345119efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactions: []
+  prebuild:
+  - obj: {fileID: 0}
+    text: This beer can  is empty.
