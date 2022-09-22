@@ -17,6 +17,11 @@ public class GeneralUI : MonoBehaviour
     DialogueBox dialogueBox;
     [SerializeField] GameObject instructions;
 
+    [Header("Cursor objects")]
+    [SerializeField] GameObject handCursor;
+    [SerializeField] GameObject dotCursor;
+
+
     [Header("Properties")]
     [SerializeField] bool hideCursor = true;
     Dictionary<Panels, GameObject> panels = new Dictionary<Panels, GameObject>();
@@ -94,5 +99,10 @@ public class GeneralUI : MonoBehaviour
     public void TurnBackground(bool state)
     {
         darkBackground.SetActive(state);
+    }
+    public void SetActiveCursor(bool isActive)
+    {
+        handCursor.SetActive(isActive);
+        dotCursor.SetActive(!isActive);
     }
 }

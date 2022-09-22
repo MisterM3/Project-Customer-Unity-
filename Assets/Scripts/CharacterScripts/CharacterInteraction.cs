@@ -15,9 +15,12 @@ public class CharacterInteraction : MonoBehaviour
     Pickable holdedObject;
     [SerializeField] float holdDistance;
     #endregion
+
+    GeneralUI ui;
     // Start is called before the first frame update
     void Start()
     {
+        ui = FindObjectOfType<GeneralUI>();
         cameraTransform = Camera.main.transform;
     }
 
@@ -51,7 +54,11 @@ public class CharacterInteraction : MonoBehaviour
     void CheckInteraction()
     {
         frontHit = MouseWorld.Instance.GetObjectInFront(objectLayer);
-
+        if (frontHit.transform == null)
+        {
+            ui.SetActiveCursor(false);
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (isHoldingObject)
@@ -111,6 +118,8 @@ public class CharacterInteraction : MonoBehaviour
 
         }
 
+        ui.SetActiveCursor(frontHit.transform.GetComponent<FuncExetion>() != null ||
+            frontHit.transform.GetComponent<Pickable>() != null);
     }
     void ReleaseObject()
     {
