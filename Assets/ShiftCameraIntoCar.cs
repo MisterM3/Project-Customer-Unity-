@@ -13,25 +13,30 @@ public class ShiftCameraIntoCar : MonoBehaviour
     private bool inCar = true;
     float timer = 0;
 
+
+    [SerializeField] bool startPos = false;
     Vector3 moveTo;
     Vector3 moveFrom;
     
     // Start is called before the first frame update
     void Start()
     {
-        controller = FindObjectOfType<CharactController>();
-        player.transform.position = cameraInCar.position;
-        controller.SetIsInCar(true);
-        player.TryGetComponent<Rigidbody>(out Rigidbody rb);
-        rb.useGravity = false;
-        player.TryGetComponent<Collider>(out Collider col);
-        col.enabled = false;
+        if (startPos)
+        {
+            controller = FindObjectOfType<CharactController>();
+            player.transform.position = cameraInCar.position;
+            controller.SetIsInCar(true);
+            player.TryGetComponent<Rigidbody>(out Rigidbody rb);
+            rb.useGravity = false;
+            player.TryGetComponent<Collider>(out Collider col);
+            col.enabled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) ;
+ 
 
         if (!Active) return;
 
