@@ -4287,6 +4287,7 @@ MonoBehaviour:
   optionsPanel: {fileID: 3733490022668740643}
   controlsPanel: {fileID: 3733490024213513569}
   ActiveUIPanel: {fileID: 7685440808563252536}
+  instructions: {fileID: 7040190113470845107}
   hideCursor: 1
 --- !u!1 &3733490023505451873
 GameObject:
@@ -6079,7 +6080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3733490024213513570
 RectTransform:
   m_ObjectHideFlags: 0

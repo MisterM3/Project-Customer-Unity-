@@ -14,6 +14,8 @@ public class DialogueBox : MonoBehaviour
     IEnumerator WriteTextCoroutine;
     char[] letters;
 
+
+    public bool isTextOnScreen { get; private set; }
     bool isTextPrinted = true;
 
     private void Awake()
@@ -38,6 +40,7 @@ public class DialogueBox : MonoBehaviour
             timeLeft -= Time.deltaTime;
             if(timeLeft < 0)
             {
+                isTextOnScreen = false;
                 _textMeshPro.text = " ";
             }
         }
@@ -63,6 +66,7 @@ public class DialogueBox : MonoBehaviour
     /// <returns></returns>
     IEnumerator WriteText()
     {
+        isTextOnScreen = true;
         isTextPrinted = false;
         for (int i = 0; i < letters.Length; i++)
         {

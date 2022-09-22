@@ -14,12 +14,17 @@ public class GeneralUI : MonoBehaviour
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject ActiveUIPanel;
 
+    DialogueBox dialogueBox;
+    [SerializeField] GameObject instructions;
+
     [Header("Properties")]
     [SerializeField] bool hideCursor = true;
     Dictionary<Panels, GameObject> panels = new Dictionary<Panels, GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
+        dialogueBox = FindObjectOfType<DialogueBox>();
         panels.Add(Panels.Navigation, navigationPanel);
         panels.Add(Panels.Options, optionsPanel);
         panels.Add(Panels.Controls, controlsPanel);
@@ -41,6 +46,7 @@ public class GeneralUI : MonoBehaviour
                 Resume();
             }
         }
+        instructions.SetActive(!dialogueBox.isTextOnScreen);
     }
     public void Resume()
     {
