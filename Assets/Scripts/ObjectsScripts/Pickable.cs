@@ -7,10 +7,12 @@ public class Pickable : MonoBehaviour
 {
     Rigidbody rb;
     enum Weight { Light, Medium, Heavy };
+    //[ContextMenu("apply to children", "ThisChildrenApply")]
     [SerializeField] Weight weight;
     [SerializeField, Tooltip("Use this to tweak at what difference of speed of an object sound" +
         " is supposed to play")] float velocityTreshold;
     Vector3 oldVelocity;
+
 
     AudioManager audioPlayer;
     bool isDropped;
@@ -60,5 +62,22 @@ public class Pickable : MonoBehaviour
             return audioPlayer;
         }
         return null;
+    }
+
+    [ContextMenu("ThisChildrenApply")]
+    void ThisChildrenApply()
+    {
+        ApplyScriptToChildren(transform);
+    }
+
+    void ApplyScriptToChildren(Transform obj)
+    {
+        for (int i = 0; i < obj.childCount; i++)
+        {
+            Transform thing = transform.GetChild(i);
+            //if (thing.childCount != 0) ApplyScriptToChildren(thing);
+            Pickable p  = thing.gameObject.AddComponent<Pickable>();
+            p = this;
+        }
     }
 }
