@@ -67,12 +67,13 @@ public class WrappedFunc
 
     public void Interacted()
     {
-        bool objectiveGood = (objectiveNumber <= ObjectiveScene.Instance.GetCurrentObjective());
-        Debug.Log(objectiveGood);
-        Debug.Log(objectiveNumber);
-        Debug.Log(ObjectiveScene.Instance.GetCurrentObjective());
-        Debug.Log(objectiveNumber >= ObjectiveScene.Instance.GetCurrentObjective());
-        Debug.Log(1 >= 0);
+
+        bool objectiveGood = true;
+        if (ObjectiveScene.Instance != null)
+        {
+            objectiveGood = (objectiveNumber <= ObjectiveScene.Instance.GetCurrentObjective());
+        }
+
 
         if(obj == null && objectiveGood)
         {
