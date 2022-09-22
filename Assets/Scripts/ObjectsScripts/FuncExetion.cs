@@ -60,12 +60,16 @@ public class SetDialogue
 [Serializable]
 public class WrappedFunc
 {
+
+    public int objectiveNumber = 0;
     public GameObject obj;
     public UnityEvent act;
 
     public void Interacted()
     {
-        if(obj == null)
+        bool objectiveGood = objectiveNumber >= ObjectiveScene.Instance.GetCurrentObjective();
+
+        if(obj == null && objectiveGood)
         {
             act?.Invoke();
             return;
@@ -77,7 +81,9 @@ public class WrappedFunc
             Debug.LogError("No inventory manager found!");
             return;
         }
-        if(!invMan.IsEmpty() && invMan.GetItemInInventory().gameObject == obj)
+
+        bool goodItemInInventory = (!invMan.IsEmpty() && invMan.GetItemInInventory().gameObject == obj);
+        if (goodItemInInventory && objectiveGood)
         {
             act?.Invoke();
         }
