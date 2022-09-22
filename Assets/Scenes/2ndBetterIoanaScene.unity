@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 3d846f0332bcc3046a52c8121c3626de,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10841,7 +10842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -14278,7 +14280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -21872,7 +21875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -21937,7 +21941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -22034,7 +22039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 1670685930}
+  - objectiveNumber: 0
+    obj: {fileID: 1670685930}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -22098,7 +22104,8 @@ MonoBehaviour:
             m_StringArgument: Alright, is there a phone in here?
             m_BoolArgument: 1
           m_CallState: 2
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -22321,7 +22328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -22406,7 +22414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -23611,7 +23620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
@@ -24993,7 +25003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactions:
-  - obj: {fileID: 0}
+  - objectiveNumber: 0
+    obj: {fileID: 0}
     act:
       m_PersistentCalls:
         m_Calls:
