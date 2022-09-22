@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractableObject : MonoBehaviour, IInteract
+public class InteractableObject : MonoBehaviour
 {
     public event EventHandler onObjectSelect;
     public event EventHandler onObjectDeSelect;

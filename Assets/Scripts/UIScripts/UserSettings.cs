@@ -29,6 +29,8 @@ public class UserSettings : MonoBehaviour
 
             DontDestroyOnLoad(this.gameObject);
         }
+        if (floatSettingsValues == null) CreateFloatDictionary();
+        if (boolSettingsValues== null) CreateBoolDictionary();
     }
     void CreateFloatDictionary()
     {
@@ -58,7 +60,11 @@ public class UserSettings : MonoBehaviour
                 break;
         }
     }
-    
-    public float GetSetting(FloatSettings settingToGet) => floatSettingsValues[settingToGet];
+
+    public float GetSetting(FloatSettings settingToGet)
+    {
+        if (floatSettingsValues == null) Debug.Log("NOT THERE");
+    return floatSettingsValues[settingToGet];
+    }
     public bool GetSetting(BoolSettings settingToGet) => boolSettingsValues[settingToGet];
 }

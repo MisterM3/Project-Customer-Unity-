@@ -33,6 +33,7 @@ public class OutlineObjects : MonoBehaviour
 
     private void Update()
     {
+        if(outlineRenderer == null) return;
         if (outlineRenderer.enabled)
         {
             Debug.Log("help");
@@ -100,6 +101,7 @@ public class OutlineObjects : MonoBehaviour
 
     public void ActivateOutline()
     {
+        if (outlineRenderer == null) return;
         Debug.Log("active");
         outlineRenderer.enabled = true;
     }
