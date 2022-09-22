@@ -31,7 +31,7 @@ public class GradualDyingPostProcessing : MonoBehaviour
 
     UserSettings settings;
 
-    private int stage = 8;
+    private int stage = 0;
     [SerializeField] private int totalStages = 8;
     private void Start()
     {
