@@ -2270,7 +2270,7 @@ GameObject:
   - component: {fileID: 4818807698866759921}
   - component: {fileID: 4818807698866759922}
   m_Layer: 5
-  m_Name: StartMenu
+  m_Name: StartMenu - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
