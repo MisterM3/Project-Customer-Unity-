@@ -43,6 +43,7 @@ public class FirstInstructions : MonoBehaviour
                 StartCoroutine("Hide", movementInstructions);
             }
         }
+
         if (currentCooldown > Time.time) return;
         RaycastHit hit = m.GetObjectInDirection(Camera.main.transform.position, Camera.main.transform.forward, layerMask);
         if (hit.transform != null)
