@@ -33,12 +33,11 @@ public class CharacterInteraction : MonoBehaviour
     private void LateUpdate()
     {
 
-       if (frontHit.transform == null) return;
+        if (frontHit.transform == null) return;
 
         if (frontHit.transform.TryGetComponent(out OutlineObjects outline))
         {
             outline.ActivateOutline();
-            Debug.Log("help");
         }
     }
     private void CheckPickedObjectPosition()
@@ -70,7 +69,7 @@ public class CharacterInteraction : MonoBehaviour
                 if (frontHit.transform == null) return;
                 if (IsPickable(frontHit.transform.gameObject, out Pickable pick))
                 {
-                    float dist = GetDistOnPlane(cameraTransform.position,pick.transform.position);
+                    float dist = GetDistOnPlane(cameraTransform.position, pick.transform.position);
                     if (dist > pickupDistance) return;
                     holdedObject = pick;
                     isHoldingObject = true;
@@ -82,13 +81,10 @@ public class CharacterInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (Time.timeScale == 0) return;
-            //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
-            if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position,frontHit.point) <= interactionDistance)
+            if (frontHit.transform != null && GetDistOnPlane(cameraTransform.position, frontHit.point) <= interactionDistance)
             {
-                print("before find funcexec");
                 if (frontHit.transform.TryGetComponent(out FuncExetion func))
                 {
-                    print("found funcexec");
                     func.Interact();
                 }
             }
@@ -96,7 +92,7 @@ public class CharacterInteraction : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            if(InventoryManager.Instance == null)
+            if (InventoryManager.Instance == null)
             {
                 Debug.LogError("No inventory in the scene!");
                 return;
@@ -107,12 +103,9 @@ public class CharacterInteraction : MonoBehaviour
                 return;
             }
 
-            //RaycastHit hit = MouseWorld.Instance.GetObjectInFront(interactionDistance, objectLayer);
             if (frontHit.transform.TryGetComponent<InteractableObject>(out InteractableObject intObj))
             {
-                //InteractableObject interactableObject = frontHit.transform.gameObject.GetComponent<InteractableObject>();
                 intObj.PickUp();
-
             }
 
         }

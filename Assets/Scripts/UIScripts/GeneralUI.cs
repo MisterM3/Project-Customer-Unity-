@@ -23,7 +23,6 @@ public class GeneralUI : MonoBehaviour
 
 
     [Header("Properties")]
-    [SerializeField] bool hideCursor = true;
     Dictionary<Panels, GameObject> panels = new Dictionary<Panels, GameObject>();
 
     // Start is called before the first frame update
@@ -60,7 +59,6 @@ public class GeneralUI : MonoBehaviour
         darkBackground.SetActive(false);
         TurnOffPanels();
         ActiveUIPanel.SetActive(true);
-        //   Cursor.lockState = hideCursor ? CursorLockMode.Locked : CursorLockMode.None;
         isPaused = false;
         if (startScreen) return;
         Cursor.lockState = CursorLockMode.Locked;

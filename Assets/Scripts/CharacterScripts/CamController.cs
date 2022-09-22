@@ -29,7 +29,6 @@ public class CamController : MonoBehaviour
     {
         playerRotation = GameObject.FindGameObjectWithTag("Player").transform;
         settings = FindObjectOfType<UserSettings>();
-        print(settings == null);
     }
 
     // Update is called once per frame
