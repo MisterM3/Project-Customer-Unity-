@@ -47,8 +47,7 @@ public class MissionUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            missionHint.SetActive(false);
-            StartCoroutine(Show());
+            ShowMission();
         }
         if (isActive)
         {
@@ -61,8 +60,18 @@ public class MissionUI : MonoBehaviour
         }
     }
 
-    public void NextMission() => text.text = missionsQueue.Dequeue();
 
+    public void ShowMission()
+    {
+        missionHint.SetActive(false);
+        StartCoroutine(Show());
+    }
+
+    public void NextMission()
+    {
+        text.text = missionsQueue.Dequeue();
+        ShowMission();
+    }
     IEnumerator Show()
     {
         while (missionCanvas.alpha < 1)
